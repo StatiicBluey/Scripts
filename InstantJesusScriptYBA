@@ -1,0 +1,24 @@
+local player = game.Players.LocalPlayer
+player.JoinedTime.Value = 1
+
+wait (1)
+
+local plr = game.Players.LocalPlayer
+                local chr = plr.Character
+                local alex = game.Workspace.Dialogues.Alex
+
+                local TPBypass
+                TPBypass = hookfunction(getrawmetatable(game).__namecall, newcclosure(function(self, ...)
+                        local args = {...}
+                        if self.Name == "Returner" and args[1] == "idklolbrah2de"  then
+                                return "  ___XP DE KEY"
+                        end
+                        return TPBypass(self, ...)
+                end))
+
+                wait(0.1)
+
+
+                chr.HumanoidRootPart.CFrame = alex.HumanoidRootPart.CFrame
+
+                alex.Dialogue.Value = ("Jesus")
