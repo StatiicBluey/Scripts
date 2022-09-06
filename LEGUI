@@ -1,0 +1,582 @@
+	----------------------------------------------
+	
+	-- Lab Experiment GUI (LEGUI) Made by Gaming Chair#7643
+	
+	----------------------------------------------
+	
+	-- Variables
+	
+	local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local humRP = char.HumanoidRootPart
+	local closed = false
+	local dragToggle = nil
+	local dragSpeed = 0.01
+	local dragStart = nil
+	local startPos = nil
+	local UIS = game:GetService("UserInputService")
+	local uiCorner = Instance.new("UICorner")
+	local uiStroke = Instance.new("UIStroke")
+	
+	------------------------------------------
+
+	uiCorner.CornerRadius = UDim.new(1, 8)
+	uiStroke.ApplyStrokeMode = "Border"
+
+	------------------------------------------
+	
+	local screenGui = Instance.new("ScreenGui")
+	local mainFrame = Instance.new("Frame")
+	local Title = Instance.new("TextLabel")
+	local noclipButton = Instance.new("TextButton")
+	local infjumpButton = Instance.new("TextButton")
+	local delLava = Instance.new("TextButton")
+	local platform = Instance.new("TextButton")
+	local suicide = Instance.new("TextButton")
+	local deleteWall = Instance.new("TextButton")
+	local credits = Instance.new("TextLabel")
+	local walkspeedGUI = Instance.new("TextButton")
+	local jumppowerGUI = Instance.new("TextButton")
+	local teleportsGUI = Instance.new("TextButton")
+	local uiCorner1 = uiCorner:Clone()
+	local uiStroke1 = uiStroke:Clone()
+	local uiCorner2 = uiCorner:Clone()
+	local uiStroke2 = uiStroke:Clone()
+	local uiCorner3 = uiCorner:Clone()
+	local uiStroke3 = uiStroke:Clone()
+	local uiCorner4 = uiCorner:Clone()
+	local uiStroke4 = uiStroke:Clone()
+	local uiCorner5 = uiCorner:Clone()
+	local uiStroke5 = uiStroke:Clone()
+	local uiCorner6 = uiCorner:Clone()
+	local uiStroke6 = uiStroke:Clone()
+	local uiCorner7 = uiCorner:Clone()
+	local uiStroke7 = uiStroke:Clone()
+	local uiCorner8 = uiCorner:Clone()
+	local uiStroke8 = uiStroke:Clone()
+	local uiCorner9 = uiCorner:Clone()
+	local uiStroke9 = uiStroke:Clone()
+	local uiCorner10 = uiCorner:Clone()
+	local uiStroke10 = uiStroke:Clone()
+	local uiCorner11 = uiCorner:Clone()
+	local uiStroke11 = uiStroke:Clone()
+	local uiCorner12 = uiCorner:Clone()
+	local uiStroke12 = uiStroke:Clone()
+	
+	-- Toggle GUI
+	
+	UIS.InputBegan:Connect(function(input)
+
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+
+			if input.KeyCode == Enum.KeyCode.RightAlt then
+
+				if closed == false then
+					mainFrame.Visible = false
+					closed = true
+				elseif closed == true then
+					mainFrame.Visible = true
+					closed = false
+				end
+			end
+		end
+	end)
+	
+	-- Drag
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(mainFrame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+
+	mainFrame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+			dragToggle = true
+			dragStart = input.Position
+			startPos = mainFrame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+	
+	-- Parents
+	
+	screenGui.Parent = plr.PlayerGui
+	mainFrame.Parent = screenGui
+	Title.Parent = mainFrame
+	noclipButton.Parent = mainFrame
+	infjumpButton.Parent = mainFrame
+	delLava.Parent = mainFrame
+	platform.Parent = mainFrame
+	suicide.Parent = mainFrame
+	deleteWall.Parent = mainFrame
+	credits.Parent = mainFrame
+	walkspeedGUI.Parent = mainFrame
+	jumppowerGUI.Parent = mainFrame
+	teleportsGUI.Parent = mainFrame
+	uiCorner1.Parent = mainFrame
+	uiStroke1.Parent = mainFrame
+	uiCorner2.Parent = Title
+	uiStroke2.Parent = Title
+	uiCorner3.Parent = noclipButton
+	uiStroke3.Parent = noclipButton
+	uiCorner4.Parent = infjumpButton
+	uiStroke4.Parent = infjumpButton
+	uiCorner5.Parent = delLava
+	uiStroke5.Parent = delLava
+	uiCorner6.Parent = platform
+	uiStroke6.Parent = platform
+	uiCorner7.Parent = suicide
+	uiStroke7.Parent = suicide
+	uiCorner8.Parent = deleteWall
+	uiStroke8.Parent = deleteWall
+	uiCorner9.Parent = credits
+	uiStroke9.Parent = credits
+	uiCorner10.Parent = walkspeedGUI
+	uiStroke10.Parent = walkspeedGUI
+	uiCorner11.Parent = jumppowerGUI
+	uiStroke11.Parent = jumppowerGUI
+	uiCorner12.Parent = teleportsGUI
+	uiStroke12.Parent = teleportsGUI
+	
+	
+	-- Names
+	
+	screenGui.Name = "LEGui"
+	mainFrame.Name = "MainFrame"
+	Title.Name = "Title"
+	credits.Name = "Credits"
+	
+	-- Properties
+	
+	screenGui.ResetOnSpawn = false
+	uiCorner1.CornerRadius = UDim.new(0, 8)
+	uiStroke1.ApplyStrokeMode = "Contextual"
+	uiCorner2.CornerRadius = UDim.new(0, 8)
+	mainFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+	mainFrame.Position = UDim2.new(0.346, 0, 0.342, 0)
+	mainFrame.Size = UDim2.new(0, 600, 0, 400)
+	Title.BackgroundColor3 = Color3.new(0, 170, 255)
+	Title.Position = UDim2.new(0, 0, 0, 0)
+	Title.Size = UDim2.new(0, 600, 0, 75)
+	Title.Font = "FredokaOne"
+	Title.Text = "LE Gui"
+	Title.TextColor3 = Color3.new(1, 1, 1)
+	Title.TextScaled = true
+	credits.BackgroundColor3 = Color3.new(0, 170, 255)
+	credits.Position = UDim2.new(0.012, 0, 0.858, 0)
+	credits.Size = UDim2.new(0, 585, 0, 49)
+	credits.Font = "FredokaOne"
+	credits.Text = "Made by Gaming Chair#7643"
+	credits.TextColor3 = Color3.new(1, 1, 1)
+	credits.TextScaled = true
+	noclipButton.BackgroundColor3 = Color3.new(0, 170, 255)
+	noclipButton.Position = UDim2.new(0.012, 0, 0.228, 0)
+	noclipButton.Size = UDim2.new(0, 182, 0, 50)
+	noclipButton.Text = "Press Q to Noclip"
+	noclipButton.Font = "FredokaOne"
+	noclipButton.TextColor3 = Color3.new(1, 1, 1)
+	noclipButton.TextScaled = true
+	infjumpButton.BackgroundColor3 = Color3.new(0, 170, 255)
+	infjumpButton.Position = UDim2.new(0.347, 0, 0.228, 0)
+	infjumpButton.Size = UDim2.new(0, 182, 0, 50)
+	infjumpButton.Text = "Infinite Jump"
+	infjumpButton.Font = "FredokaOne"
+	infjumpButton.TextColor3 = Color3.new(1, 1, 1)
+	infjumpButton.TextScaled = true
+	delLava.BackgroundColor3 = Color3.new(0, 170, 255)
+	delLava.Position = UDim2.new(0.683, 0, 0.228, 0)
+	delLava.Size = UDim2.new(0, 182, 0, 50)
+	delLava.Text = "Delete Lava"
+	delLava.Font = "FredokaOne"
+	delLava.TextColor3 = Color3.new(1, 1, 1)
+	delLava.TextScaled = true
+	platform.BackgroundColor3 = Color3.new(0, 170, 255)
+	platform.Position = UDim2.new(0.012, 0, 0.438, 0)
+	platform.Size = UDim2.new(0, 182, 0, 50)
+	platform.Text = "Platform"
+	platform.Font = "FredokaOne"
+	platform.TextColor3 = Color3.new(1, 1, 1)
+	platform.TextScaled = true
+	suicide.BackgroundColor3 = Color3.new(0, 170, 255)
+	suicide.Position = UDim2.new(0.348, 0, 0.438, 0)
+	suicide.Size = UDim2.new(0, 182, 0, 50)
+	suicide.Text = "Suicide"
+	suicide.Font = "FredokaOne"
+	suicide.TextColor3 = Color3.new(1, 1, 1)
+	suicide.TextScaled = true
+	deleteWall.BackgroundColor3 = Color3.new(0, 170, 255)
+	deleteWall.Position = UDim2.new(0.683, 0, 0.438, 0)
+	deleteWall.Size = UDim2.new(0, 182, 0, 50)
+	deleteWall.Text = "Delete Kill Wall"
+	deleteWall.Font = "FredokaOne"
+	deleteWall.TextColor3 = Color3.new(1, 1, 1)
+	deleteWall.TextScaled = true
+	walkspeedGUI.BackgroundColor3 = Color3.new(0, 170, 255)
+	walkspeedGUI.Position = UDim2.new(0.012, 0, 0.648, 0)
+	walkspeedGUI.Size = UDim2.new(0, 182, 0, 50)
+	walkspeedGUI.Text = "Walkspeed GUI"
+	walkspeedGUI.Font = "FredokaOne"
+	walkspeedGUI.TextColor3 = Color3.new(1, 1, 1)
+	walkspeedGUI.TextScaled = true
+	jumppowerGUI.BackgroundColor3 = Color3.new(0, 170, 255)
+	jumppowerGUI.Position = UDim2.new(0.348, 0, 0.648, 0)
+	jumppowerGUI.Size = UDim2.new(0, 182, 0, 50)
+	jumppowerGUI.Text = "JumpPower GUI"
+	jumppowerGUI.Font = "FredokaOne"
+	jumppowerGUI.TextColor3 = Color3.new(1, 1, 1)
+	jumppowerGUI.TextScaled = true
+	teleportsGUI.BackgroundColor3 = Color3.new(0, 170, 255)
+	teleportsGUI.Position = UDim2.new(0.683, 0, 0.648, 0)
+	teleportsGUI.Size = UDim2.new(0, 182, 0, 50)
+	teleportsGUI.Text = "Coming Soon"
+	teleportsGUI.Font = "FredokaOne"
+	teleportsGUI.TextColor3 = Color3.new(1, 1, 1)
+	teleportsGUI.TextScaled = true
+	
+	-- Buttons n stuff
+	
+	noclipButton.MouseButton1Click:Connect(function()
+		-- Noclip by Alumark on v3rmilion
+		-- Press Q to activate
+
+		local StealthMode = false -- If game has an anticheat that checks the logs
+
+		local Indicator
+
+		if not StealthMode then
+			local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+			print("NOCLIP: Press Q to Activate")
+			Indicator = Instance.new("TextLabel", ScreenGui)
+			Indicator.AnchorPoint = Vector2.new(0, 1)
+			Indicator.Position = UDim2.new(0, 0, 1, 0)
+			Indicator.Size = UDim2.new(0, 200, 0, 50)
+			Indicator.BackgroundTransparency = 1
+			Indicator.TextScaled = true
+			Indicator.TextStrokeTransparency = 0
+			Indicator.TextColor3 = Color3.new(0, 0, 0)
+			Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
+			Indicator.Text = "Noclip: Enabled"
+		end
+
+		local noclip = true
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+
+		local mouse = player:GetMouse()
+
+		mouse.KeyDown:Connect(function(key)
+			if key == "q" then
+				noclip = not noclip
+
+				if not StealthMode then
+					Indicator.Text = "Noclip: " .. (noclip and "Enabled" or "Disabled")
+				end
+			end
+		end)
+
+		while true do
+			player = game.Players.LocalPlayer
+			character = player.Character
+
+			if noclip then
+				for _, v in pairs(character:GetDescendants()) do
+					pcall(function()
+						if v:IsA("BasePart") then
+							v.CanCollide = false
+						end
+					end)
+				end
+			end
+
+			game:GetService("RunService").Stepped:wait()
+		end
+	end)
+	
+	
+	infjumpButton.MouseButton1Click:Connect(function()
+		_G.infinjump = true
+
+		local Player = game:GetService("Players").LocalPlayer
+		local Mouse = Player:GetMouse()
+		Mouse.KeyDown:connect(function(k)
+			if _G.infinjump then
+				if k:byte() == 32 then
+					Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+					Humanoid:ChangeState("Jumping")
+					wait(0.1)
+					Humanoid:ChangeState("Seated")
+				end
+			end
+		end)
+
+		local Player = game:GetService("Players").LocalPlayer
+		local Mouse = Player:GetMouse()
+		Mouse.KeyDown:connect(function(k)
+			k = k:lower()
+			if k == "f" then
+				if _G.infinjump == true then
+					_G.infinjump = false
+				else
+					_G.infinjump = true
+				end
+			end
+		end)
+	end)
+	
+	delLava.MouseButton1Click:Connect(function()
+		if game.Workspace:FindFirstChild("LavaArea") then
+			local lava = game.Workspace.LavaArea
+
+			lava:Destroy()
+
+			delLava.BackgroundColor3 = Color3.new(0, 1, 0)
+			wait(0.5)
+			delLava.BackgroundColor3 = Color3.new(0, 170, 255)
+		else
+			delLava.BackgroundColor3 = Color3.new(1, 0, 0)
+			wait(0.5)
+			delLava.BackgroundColor3 = Color3.new(0, 170, 255)
+		end
+	end)
+	
+	platform.MouseButton1Click:Connect(function()
+		local buildin = game.Workspace.NewLobby:FindFirstChild("Lobby Building")
+		local BOX = buildin:FindFirstChild("Common Box")
+		local part = BOX:FindFirstChild("Part")
+		local plr = game.Players.LocalPlayer
+
+		part.Name = "Platform"
+
+		part.Position = Vector3.new(-50, -10, 80)
+		part.Size = Vector3.new(250, 1, 250)
+		part.Transparency = 0.5
+	end)
+	
+	suicide.MouseButton1Click:Connect(function()
+		plr.Character.Head:Destroy()
+	end)
+	
+	deleteWall.MouseButton1Click:Connect(function()
+		if game.Workspace:FindFirstChild("Walls") then
+			deleteWall.BackgroundColor3 = Color3.new(0, 1, 0)
+			game.Workspace.Walls:Destroy()
+			game.Workspace.Ceiling:Destroy()
+			game.Workspace.ExclusiveCeiling:Destroy()
+			wait(0.5)
+			deleteWall.BackgroundColor3 = Color3.new (0, 170, 255)
+		else
+			deleteWall.BackgroundColor3 = Color3.new(1, 0, 0)
+			wait(0.5)
+			deleteWall.BackgroundColor3 = Color3.new(0, 170, 255)
+		end
+	end)
+	
+	walkspeedGUI.MouseButton1Click:Connect(function()
+		local closedwalk = false
+		local dragTogglewalk = nil
+		local dragSpeedwalk = 0.01
+		local dragStartwalk = nil
+		local startPoswalk = nil
+		local walkscreenGui = Instance.new("ScreenGui")
+		local walkFrame = Instance.new("Frame")
+		walkscreenGui.ResetOnSpawn = false
+		
+		local function updateInput(input)
+			local delta = input.Position - dragStartwalk
+			local position = UDim2.new(startPoswalk.X.Scale, startPoswalk.X.Offset + delta.X,
+				startPoswalk.Y.Scale, startPoswalk.Y.Offset + delta.Y)
+			game:GetService('TweenService'):Create(walkFrame, TweenInfo.new(dragSpeedwalk), {Position = position}):Play()
+		end
+
+		walkFrame.InputBegan:Connect(function(input)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+				dragTogglewalk = true
+				dragStartwalk = input.Position
+				startPoswalk = walkFrame.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragTogglewalk = false
+					end
+				end)
+			end
+		end)
+
+		UIS.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement then
+				if dragTogglewalk then
+					updateInput(input)
+				end
+			end
+		end)
+		
+		
+		local set = Instance.new("TextButton")
+		local walkTitle = Instance.new("TextLabel")
+		local textBox = Instance.new("TextBox")
+		local uiCorner1walk = Instance.new("UICorner")
+		local uiStroke1walk = Instance.new("UIStroke")
+		uiStroke1walk.ApplyStrokeMode = "Border"
+		local uiCorner2walk = Instance.new("UICorner")
+		local uiStroke2walk = uiStroke1walk:Clone()
+		local uiCorner3walk = Instance.new("UICorner")
+		local uiStroke3walk = uiStroke1walk:Clone()
+		local uiCorner4walk = Instance.new("UICorner")
+		local uiStroke4walk = uiStroke1walk:Clone()
+		
+		walkscreenGui.Parent = plr.PlayerGui
+		walkFrame.Parent = walkscreenGui
+		set.Parent = walkFrame
+		walkTitle.Parent = walkFrame
+		textBox.Parent = walkFrame
+		uiCorner1walk.Parent = walkFrame
+		uiStroke1walk.Parent = walkFrame
+		uiCorner2walk.Parent = set
+		uiCorner3walk.Parent = walkTitle
+		uiCorner4walk.Parent = textBox
+		uiStroke2walk.Parent = set
+		uiStroke3walk.Parent = walkTitle
+		uiStroke4walk.Parent = textBox
+		
+		walkFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+		walkFrame.Position = UDim2.new(0.71, 0, 0.171, 0)
+		walkFrame.Size = UDim2.new(0, 285, 0, 200)
+		set.BackgroundColor3 = Color3.new(0, 170, 255)
+		set.Position = UDim2.new(0, 0, 0.75, 0)
+		set.Size = UDim2.new(0, 285, 0, 50)
+		set.Font = "FredokaOne"
+		set.Text = "Set"
+		set.TextColor3 = Color3.new(1, 1, 1)
+		set.TextScaled = true
+		walkTitle.BackgroundColor3 = Color3.new(0, 170, 255)
+		walkTitle.Position = UDim2.new(0, 0, 0, 0)
+		walkTitle.Size = UDim2.new(0, 285, 0, 50)
+		walkTitle.Font = "FredokaOne"
+		walkTitle.Text = "Walk Speed"
+		walkTitle.TextColor3 = Color3.new(1, 1, 1)
+		walkTitle.TextScaled = true
+		textBox.BackgroundColor3 = Color3.new(1, 1, 1)
+		textBox.Position = UDim2.new(0, 0, 0.375, 0)
+		textBox.Size = UDim2.new(0, 285, 0, 50)
+		textBox.Font = "FredokaOne"
+		textBox.Text = char.Humanoid.WalkSpeed
+		textBox.TextColor3 = Color3.new(0, 170, 255)
+		textBox.TextStrokeColor3 = Color3.new(0, 0, 0)
+		textBox.TextStrokeTransparency = 0
+		textBox.TextScaled = true
+		
+		set.MouseButton1Click:Connect(function()
+			plr.Character.Humanoid.WalkSpeed = (textBox.Text)
+		end)
+	end)
+	
+	jumppowerGUI.MouseButton1Click:Connect(function()
+		local closedjump = false
+		local dragTogglejump = nil
+		local dragSpeedjump = 0.01
+		local dragStartjump = nil
+		local startPosjump = nil
+		local jumpscreenGui = Instance.new("ScreenGui")
+		local jumpFrame = Instance.new("Frame")
+		jumpscreenGui.ResetOnSpawn = false
+
+		local function updateInput(input)
+			local delta = input.Position - dragStartjump
+			local position = UDim2.new(startPosjump.X.Scale, startPosjump.X.Offset + delta.X,
+				startPosjump.Y.Scale, startPosjump.Y.Offset + delta.Y)
+			game:GetService('TweenService'):Create(jumpFrame, TweenInfo.new(dragSpeedjump), {Position = position}):Play()
+		end
+
+		jumpFrame.InputBegan:Connect(function(input)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+				dragTogglejump = true
+				dragStartjump = input.Position
+				startPosjump = jumpFrame.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragTogglejump = false
+					end
+				end)
+			end
+		end)
+
+		UIS.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement then
+				if dragTogglejump then
+					updateInput(input)
+				end
+			end
+		end)
+
+
+		local set = Instance.new("TextButton")
+		local jumpTitle = Instance.new("TextLabel")
+		local textBoxjump = Instance.new("TextBox")
+		local uiCorner1jump = Instance.new("UICorner")
+		local uiStroke1jump = Instance.new("UIStroke")
+		uiStroke1jump.ApplyStrokeMode = "Border"
+		local uiCorner2jump = Instance.new("UICorner")
+		local uiStroke2jump = uiStroke1jump:Clone()
+		local uiCorner3jump = Instance.new("UICorner")
+		local uiStroke3jump = uiStroke1jump:Clone()
+		local uiCorner4jump = Instance.new("UICorner")
+		local uiStroke4jump = uiStroke1jump:Clone()
+
+		jumpscreenGui.Parent = plr.PlayerGui
+		jumpFrame.Parent = jumpscreenGui
+		set.Parent = jumpFrame
+		jumpTitle.Parent = jumpFrame
+		textBoxjump.Parent = jumpFrame
+		uiCorner1jump.Parent = jumpFrame
+		uiStroke1jump.Parent = jumpFrame
+		uiCorner2jump.Parent = set
+		uiCorner3jump.Parent = jumpTitle
+		uiCorner4jump.Parent = textBoxjump
+		uiStroke2jump.Parent = set
+		uiStroke3jump.Parent = jumpTitle
+		uiStroke4jump.Parent = textBoxjump
+
+		jumpFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+		jumpFrame.Position = UDim2.new(0.71, 0, 0.171, 0)
+		jumpFrame.Size = UDim2.new(0, 285, 0, 200)
+		set.BackgroundColor3 = Color3.new(0, 170, 255)
+		set.Position = UDim2.new(0, 0, 0.75, 0)
+		set.Size = UDim2.new(0, 285, 0, 50)
+		set.Font = "FredokaOne"
+		set.Text = "Set"
+		set.TextColor3 = Color3.new(1, 1, 1)
+		set.TextScaled = true
+		jumpTitle.BackgroundColor3 = Color3.new(0, 170, 255)
+		jumpTitle.Position = UDim2.new(0, 0, 0, 0)
+		jumpTitle.Size = UDim2.new(0, 285, 0, 50)
+		jumpTitle.Font = "FredokaOne"
+		jumpTitle.Text = "Jump Power"
+		jumpTitle.TextColor3 = Color3.new(1, 1, 1)
+		jumpTitle.TextScaled = true
+		textBoxjump.BackgroundColor3 = Color3.new(1, 1, 1)
+		textBoxjump.Position = UDim2.new(0, 0, 0.375, 0)
+		textBoxjump.Size = UDim2.new(0, 285, 0, 50)
+		textBoxjump.Font = "FredokaOne"
+		textBoxjump.Text = char.Humanoid.JumpPower
+		textBoxjump.TextColor3 = Color3.new(0, 170, 255)
+		textBoxjump.TextStrokeColor3 = Color3.new(0, 0, 0)
+		textBoxjump.TextStrokeTransparency = 0
+		textBoxjump.TextScaled = true
+
+		set.MouseButton1Click:Connect(function()
+			plr.Character.Humanoid.JumpPower = (textBoxjump.Text)
+		end)
+	end)
