@@ -1,0 +1,3125 @@
+	-------------------------------------------------
+
+	-- TOGSO (THE OGS ONLY), BY GAMING CHAIR
+
+	-------------------------------------------------
+	
+	--Variables
+	local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local humRP = char.HumanoidRootPart
+	local closed = false
+	
+	local dragToggle = nil
+	local dragSpeed = 0.01
+	local dragStart = nil
+	local startPos = nil
+	
+	local dragToggle2 = nil
+	local dragSpeed2 = 0.01
+	local dragStart2 = nil
+	local startPos2 = nil
+	
+	local dragToggle3 = nil
+	local dragSpeed3 = 0.01
+	local dragStart3 = nil
+	local startPos3 = nil
+	
+	local dragToggle4 = nil
+	local dragSpeed4 = 0.01
+	local dragStart4 = nil
+	local startPos4 = nil
+	
+	local dragToggle5 = nil
+	local dragSpeed5 = 0.01
+	local dragStart5 = nil
+	local startPos5 = nil
+	
+	local dragToggle6 = nil
+	local dragSpeed6 = 0.01
+	local dragStart6 = nil
+	local startPos6 = nil
+	
+	local UIS = game:GetService("UserInputService")
+	
+	local tweenservice = game:GetService("TweenService")
+	local player = game.Players.LocalPlayer
+	local playergui = player.PlayerGui
+	local screenGui = Instance.new("ScreenGui", playergui); screenGui.Name = "TOGSO"; screenGui.ResetOnSpawn = false
+	local bindsFrame = Instance.new("Frame", screenGui)
+	local bindsScrollingFrame = Instance.new("ScrollingFrame", bindsFrame)
+	local bindsX = Instance.new("TextButton", bindsFrame)
+	local bindTitle = Instance.new("TextLabel", bindsFrame)
+	local GuiToggleBindButton = Instance.new("TextButton", bindsScrollingFrame)
+	local startFrame = Instance.new("Frame", screenGui)
+	local titleFrame = Instance.new("Frame", startFrame)
+	local startButton = Instance.new("TextButton", startFrame)
+	local versionText = Instance.new("TextLabel", startFrame)
+	local startBody = Instance.new("TextLabel", startFrame)
+	local titleStart = Instance.new("TextLabel", titleFrame)
+	local mainFrame = Instance.new("Frame", screenGui)
+	local buttonBackground = Instance.new("Frame", mainFrame)
+	local universalButton = Instance.new("TextButton", buttonBackground)
+	local hubsButton = Instance.new("TextButton", buttonBackground)
+	local AboutButton = Instance.new("TextButton", buttonBackground)
+	local universalFrame = Instance.new("ScrollingFrame", mainFrame)
+	local hubsFrame = Instance.new("ScrollingFrame", mainFrame)
+	local aboutFrame = Instance.new("Frame", mainFrame)
+	local titleFrameMain = Instance.new("Frame", mainFrame)
+	local title = Instance.new("TextLabel", titleFrameMain)
+	local fly = Instance.new("TextButton", universalFrame)
+	local infjump = Instance.new("TextButton", universalFrame)
+	local hello = Instance.new("TextLabel", mainFrame)
+	local midSplit = Instance.new("Frame", aboutFrame)
+	local guiKillButton = Instance.new("TextButton", aboutFrame)
+	local line = Instance.new("TextLabel", aboutFrame)
+	local patchNotesTitle = Instance.new("TextLabel", aboutFrame)
+	local patchNotesDesc = Instance.new("TextLabel", aboutFrame)
+	local line2 = Instance.new("TextLabel", aboutFrame)
+	local settingsTitle = Instance.new("TextLabel", aboutFrame)
+	local KeybindsButton = Instance.new("TextButton", aboutFrame)
+	local teleportFrame = Instance.new("Frame", screenGui)
+	local teleportTitle = Instance.new("TextLabel", teleportFrame)
+	local teleportScrollFrame = Instance.new("ScrollingFrame", teleportFrame)
+	local teleportGuiButton = Instance.new("TextButton", hubsFrame)
+	local flyKeybindButton = Instance.new("TextButton", bindsScrollingFrame)
+	local evadeHubButton = Instance.new("TextButton", hubsFrame)
+	local LEguiButton = Instance.new("TextButton", hubsFrame)
+	local qToNoclip = Instance.new("TextButton", universalFrame)
+	local kys = Instance.new("TextButton", universalFrame)
+	local walkSpeedGuiButton = Instance.new("TextButton", hubsFrame)
+	local jumpPowerGuiButton = Instance.new("TextButton", hubsFrame)
+	local walkspeedFrame = Instance.new("Frame", screenGui)
+	local jumppowerFrame = Instance.new("Frame", screenGui)
+	local setWalk = Instance.new("TextButton", walkspeedFrame)
+	local setJump = Instance.new("TextButton", jumppowerFrame)
+	local walktxtbox = Instance.new("TextBox", walkspeedFrame)
+	local jumptxtbox = Instance.new("TextBox", jumppowerFrame)
+	local walkTitle = Instance.new("TextLabel", walkspeedFrame)
+	local jumpTitle = Instance.new("TextLabel", jumppowerFrame)
+	local noclipTool = Instance.new("TextButton", universalFrame)
+	local qnoclipbindbutton = Instance.new("TextButton", bindsScrollingFrame)
+	local localBtools = Instance.new("TextButton", universalFrame)
+	local localDelButton = Instance.new("TextButton", universalFrame)
+	local animationsHub = Instance.new("TextButton", hubsFrame)
+	local spectate = Instance.new("TextButton", hubsFrame)
+	local reportProblemsFrame = Instance.new("Frame", screenGui)
+	local reportProblemsTitle = Instance.new("TextLabel", reportProblemsFrame)
+	local reportProblemsTextBox = Instance.new("TextBox", reportProblemsFrame)
+	local reportProblemsSubmit = Instance.new("TextButton", reportProblemsFrame)
+	local ReportProblemsButton = Instance.new("TextButton", aboutFrame)
+	local reportProblemsX = Instance.new("TextButton", reportProblemsFrame)
+	local uiCorner1 = Instance.new("UICorner", startFrame)
+	local uiCorner2 = Instance.new("UICorner", titleFrame)
+	local uiCorner3 = Instance.new("UICorner", startButton)
+	local uiCorner4 = Instance.new("UICorner", mainFrame)
+	local uiCorner5 = Instance.new("UICorner", universalButton)
+	local uiCorner6 = Instance.new("UICorner", hubsButton)
+	local uiCorner7 = Instance.new("UICorner", AboutButton)
+	local uiCorner8 = Instance.new("UICorner", buttonBackground)
+	local uiCorner9 = Instance.new("UICorner", fly)
+	local uiCorner10 = Instance.new("UICorner", titleFrameMain)
+	local uiCorner11 = Instance.new("UICorner", universalFrame)
+	local uiCorner12 = Instance.new("UICorner", aboutFrame)
+	local uiCorner13 = Instance.new("UICorner", hubsFrame)
+	local uiCorner14 = Instance.new("UICorner", guiKillButton)
+	local uiCorner15 = Instance.new("UICorner", KeybindsButton)
+	local uiCorner16 = Instance.new("UICorner", infjump)
+	local uiCorner17 = Instance.new("UICorner", teleportFrame)
+	local uiCorner18 = Instance.new("UICorner", teleportTitle)
+	local uiCorner19 = Instance.new("UICorner", teleportGuiButton)
+	local uiCorner20 = Instance.new("UICorner", flyKeybindButton)
+	local uiCorner21 = Instance.new("UICorner", evadeHubButton)
+	local uiCorner22 = Instance.new("UICorner", LEguiButton)
+	local uiCorner23 = Instance.new("UICorner", qToNoclip)
+	local uiCorner24 = Instance.new("UICorner", kys)
+	local uiCorner25 = Instance.new("UICorner", walkSpeedGuiButton)
+	local uiCorner26 = Instance.new("UICorner", jumpPowerGuiButton)
+	local uiCorner27 = Instance.new("UICorner", setWalk)
+	local uiCorner28 = Instance.new("UICorner", setJump)
+	local uiCorner29 = Instance.new("UICorner", walkspeedFrame)
+	local uiCorner30 = Instance.new("UICorner", jumppowerFrame)
+	local uiCorner31 = Instance.new("UICorner", walktxtbox)
+	local uiCorner32 = Instance.new("UICorner", jumptxtbox)
+	local uiCorner33 = Instance.new("UICorner", walkTitle)
+	local uiCorner34 = Instance.new("UICorner", jumpTitle)
+	local uiCorner35 = Instance.new("UICorner", noclipTool)
+	local uiCorner36 = Instance.new("UICorner", bindsFrame)
+	local uiCorner37 = Instance.new("UICorner", bindsScrollingFrame)
+	local uiCorner38 = Instance.new("UICorner", bindsX)
+	local uiCorner39 = Instance.new("UICorner", bindTitle)
+	local uiCorner40 = Instance.new("UICorner", GuiToggleBindButton)
+	local uiCorner41 = Instance.new("UICorner", qnoclipbindbutton)
+	local uiCorner42 = Instance.new("UICorner", localBtools)
+	local uiCorner43 = Instance.new("UICorner", localDelButton)
+	local uiCorner44 = Instance.new("UICorner", animationsHub)
+	local uiCorner45 = Instance.new("UICorner", spectate)
+	local uiCorner46 = Instance.new("UICorner", reportProblemsFrame)
+	local uiCorner47 = Instance.new("UICorner", reportProblemsSubmit)
+	local uiCorner48 = Instance.new("UICorner", reportProblemsTitle)
+	local uiCorner49 = Instance.new("UICorner", ReportProblemsButton)
+	local uiCorner50 = Instance.new("UICorner", reportProblemsX)
+	local uiStroke1 = Instance.new("UIStroke", startFrame)
+	local uiStroke2 = Instance.new("UIStroke", titleFrame)
+	local uiStroke3 = Instance.new("UIStroke", titleStart)
+	local uiStroke4 = Instance.new("UIStroke", startButton)
+	local uiStroke5 = Instance.new("UIStroke", versionText)
+	local uiStroke6 = Instance.new("UIStroke", startBody)
+	local uiStroke7 = Instance.new("UIStroke", startButton); uiStroke7.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local uiStroke8 = Instance.new("UIStroke", mainFrame)
+	local uiStroke9 = Instance.new("UIStroke", fly)
+	local uiStroke10 = Instance.new("UIStroke", title)
+	local uiStroke11 = Instance.new("UIStroke", titleFrameMain)
+	local uiStroke12 = Instance.new("UIStroke", universalFrame)
+	local uiStroke13 = Instance.new("UIStroke", universalButton)
+	local uiStroke14 = Instance.new("UIStroke", hubsButton)
+	local uiStroke15 = Instance.new("UIStroke", AboutButton)
+	local uiStroke16 = Instance.new("UIStroke", buttonBackground)
+	local uiStroke17 = Instance.new("UIStroke", infjump)
+	local uiStroke18 = Instance.new("UIStroke", teleportFrame)
+	local uiStroke19 = Instance.new("UIStroke", teleportTitle)
+	local uiStroke20 = Instance.new("UIStroke", teleportGuiButton)
+	local uiStroke21 = Instance.new("UIStroke", flyKeybindButton)
+	local uiStroke22 = Instance.new("UIStroke", evadeHubButton)
+	local uiStroke23 = Instance.new("UIStroke", LEguiButton)
+	local uiStroke24 = Instance.new("UIStroke", qToNoclip)
+	local uiStroke25 = Instance.new("UIStroke", kys)
+	local uiStroke26 = Instance.new("UIStroke", walkSpeedGuiButton)
+	local uiStroke27 = Instance.new("UIStroke", jumpPowerGuiButton)
+	local uiStroke28 = Instance.new("UIStroke", setWalk)
+	local uiStroke29 = Instance.new("UIStroke", setJump)
+	local uiStroke30 = Instance.new("UIStroke", walkspeedFrame)
+	local uiStroke31 = Instance.new("UIStroke", jumppowerFrame)
+	local uiStroke32 = Instance.new("UIStroke", walktxtbox)
+	local uiStroke33 = Instance.new("UIStroke", jumptxtbox)
+	local uiStroke34 = Instance.new("UIStroke", walkTitle)
+	local uiStroke35 = Instance.new("UIStroke", jumpTitle)
+	local uiStroke36 = Instance.new("UIStroke", noclipTool)
+	local uiStroke37 = Instance.new("UIStroke", bindsFrame)
+	local uiStroke38 = Instance.new("UIStroke", bindTitle); uiStroke38.ApplyStrokeMode = "Border"
+	local uiStroke39 = Instance.new("UIStroke", localBtools)
+	local uiStroke40 = Instance.new("UIStroke", localDelButton)
+	local uiStroke41 = Instance.new("UIStroke", animationsHub)
+	local uiStroke42 = Instance.new("UIStroke", spectate)
+	local uiStroke43 = Instance.new("UIStroke", reportProblemsTextBox); uiStroke43.ApplyStrokeMode = "Border"; uiStroke43.Color = Color3.new(0.196078, 0.196078, 0.196078); uiStroke43.Thickness = 10
+	local uiStroke44 = Instance.new("UIStroke", reportProblemsX)
+	local uiGrid = Instance.new("UIGridLayout", universalFrame); uiGrid.CellPadding = UDim2.new(0, 10, 0, 10); uiGrid.CellSize = UDim2.new(0, 100, 0, 50)
+	local uiGrid2 = Instance.new("UIGridLayout", hubsFrame); uiGrid2.CellPadding = UDim2.new(0, 10, 0, 10); uiGrid2.CellSize = UDim2.new(0, 100, 0, 50)
+	local uiGrid3 = Instance.new("UIGridLayout", teleportScrollFrame); uiGrid3.CellPadding = UDim2.new(0, 5, 0, 5); uiGrid3.CellSize = UDim2.new(0, 150, 0, 25)
+	local uiGrid4 = Instance.new("UIGridLayout", bindsScrollingFrame); uiGrid4.CellPadding = UDim2.new(0, 15, 0 , 15); uiGrid4.CellSize = UDim2.new(0, 125, 0, 65)
+	
+	--Movement
+	
+	--1
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(mainFrame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+
+	mainFrame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+			dragToggle = true
+			dragStart = input.Position
+			startPos = mainFrame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+	
+	--2
+	
+	local function updateInput(input)
+		local delta2 = input.Position - dragStart2
+		local position2 = UDim2.new(startPos2.X.Scale, startPos2.X.Offset + delta2.X,
+			startPos2.Y.Scale, startPos2.Y.Offset + delta2.Y)
+		game:GetService('TweenService'):Create(teleportFrame, TweenInfo.new(dragSpeed2), {Position = position2}):Play()
+	end
+
+	teleportFrame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+			dragToggle2 = true
+			dragStart2 = input.Position
+			startPos2 = teleportFrame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle2 = false
+				end
+			end)
+		end
+	end)
+
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			if dragToggle2 then
+				updateInput(input)
+			end
+		end
+	end)
+	
+	--3
+	
+	local function updateInput(input)
+		local delta3 = input.Position - dragStart3
+		local position3 = UDim2.new(startPos3.X.Scale, startPos3.X.Offset + delta3.X,
+			startPos3.Y.Scale, startPos3.Y.Offset + delta3.Y)
+		game:GetService('TweenService'):Create(walkspeedFrame, TweenInfo.new(dragSpeed3), {Position = position3}):Play()
+	end
+
+	walkspeedFrame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+			dragToggle3 = true
+			dragStart3 = input.Position
+			startPos3 = walkspeedFrame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle3 = false
+				end
+			end)
+		end
+	end)
+
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			if dragToggle3 then
+				updateInput(input)
+			end
+		end
+	end)
+	
+	--4
+	
+	local function updateInput(input)
+		local delta4 = input.Position - dragStart4
+		local position4 = UDim2.new(startPos4.X.Scale, startPos4.X.Offset + delta4.X,
+			startPos4.Y.Scale, startPos4.Y.Offset + delta4.Y)
+		game:GetService('TweenService'):Create(jumppowerFrame, TweenInfo.new(dragSpeed4), {Position = position4}):Play()
+	end
+
+	jumppowerFrame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+			dragToggle4 = true
+			dragStart4 = input.Position
+			startPos4 = jumppowerFrame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle4 = false
+				end
+			end)
+		end
+	end)
+
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			if dragToggle4 then
+				updateInput(input)
+			end
+		end
+	end)
+	
+	--5
+	local function updateInput(input)
+		local delta5 = input.Position - dragStart5
+		local position5 = UDim2.new(startPos5.X.Scale, startPos5.X.Offset + delta5.X,
+			startPos5.Y.Scale, startPos5.Y.Offset + delta5.Y)
+		game:GetService('TweenService'):Create(bindsFrame, TweenInfo.new(dragSpeed5), {Position = position5}):Play()
+	end
+
+	bindsFrame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+			dragToggle5 = true
+			dragStart5 = input.Position
+			startPos5 = bindsFrame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle5 = false
+				end
+			end)
+		end
+	end)
+
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			if dragToggle5 then
+				updateInput(input)
+			end
+		end
+	end)
+	
+	--6
+	local function updateInput(input)
+		local delta6 = input.Position - dragStart6
+		local position6 = UDim2.new(startPos6.X.Scale, startPos6.X.Offset + delta6.X,
+			startPos6.Y.Scale, startPos6.Y.Offset + delta6.Y)
+		game:GetService('TweenService'):Create(reportProblemsFrame, TweenInfo.new(dragSpeed6), {Position = position6}):Play()
+	end
+
+	reportProblemsFrame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+			dragToggle6 = true
+			dragStart6 = input.Position
+			startPos6 = reportProblemsFrame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle6 = false
+				end
+			end)
+		end
+	end)
+
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			if dragToggle6 then
+				updateInput(input)
+			end
+		end
+	end)
+
+	--Open/Close & Keybinds
+	
+	local keybindOpenClose = Enum.KeyCode.RightShift
+	local flyDisableKeybind = Enum.KeyCode.F
+	local bindForNoclipping = Enum.KeyCode.Q
+	
+	UIS.InputBegan:Connect(function(Input, IsTyping)
+		if IsTyping then return end
+		if Input.KeyCode == keybindOpenClose then
+			if mainFrame.Visible == false then
+				mainFrame.Visible = true
+			elseif mainFrame.Visible == true then
+				mainFrame.Visible = false
+			end
+		end
+	end)
+	
+	--Functions
+	
+	local function tweens()
+		local mainframetweeninfo = TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out, 0, false, 0.2)
+		local mainframeproperties = {
+			Size = UDim2.new(0, 600, 0, 400)
+		}
+		local mainframetween = tweenservice:Create(mainFrame, mainframetweeninfo, mainframeproperties)
+		
+		local buttonbackgroundtween = TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out, 0, false, 0.2)
+		local buttonbackgroundproperties = {
+			Size = UDim2.new(0, 600, 0, 50),
+			Position = UDim2.new(0, 0, 0.125, 0)
+		}
+		local buttonbackgroundtween = tweenservice:Create(buttonBackground, buttonbackgroundtween, buttonbackgroundproperties)
+		
+		mainframetween:Play()
+		buttonbackgroundtween:Play()
+	end
+	
+	--Properties
+	startFrame.BackgroundColor3 = Color3.new(0.145098, 0.145098, 0.145098)
+	startFrame.Position = UDim2.new(0.237, 0, 0.355, 0)
+	startFrame.Size = UDim2.new(0, 450, 0, 200)
+	
+	titleFrame.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	titleFrame.Position = UDim2.new(0, 0, 0, 0)
+	titleFrame.Size = UDim2.new(0, 450, 0, 50)
+	
+	titleStart.BackgroundTransparency = 1
+	titleStart.Position = UDim2.new(0, 0, 0, 0)
+	titleStart.Size = UDim2.new(0, 450, 0, 50)
+	titleStart.Text = "Welcome To TOGSO"
+	titleStart.TextColor3 = Color3.new(1, 1, 1)
+	titleStart.TextScaled = true
+	titleStart.Font = "SourceSans"
+	
+	startButton.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	startButton.Position = UDim2.new(0.333, 0, 0.725, 0)
+	startButton.Size = UDim2.new(0, 150, 0, 40)
+	startButton.Text = "START"
+	startButton.TextColor3 = Color3.new(1, 1, 1)
+	startButton.TextScaled = true
+	startButton.Font = "SourceSans"
+	
+	versionText.BackgroundTransparency = 1
+	versionText.Position = UDim2.new(0.278, 0, 0.25, 0)
+	versionText.Size = UDim2.new(0, 200, 0, 35)
+	versionText.Text = "Version 1.0"
+	versionText.TextColor3 = Color3.new(1, 1, 1)
+	versionText.TextScaled = true
+	versionText.Font = "SourceSans"
+	
+	startBody.BackgroundTransparency = 1
+	startBody.Position = UDim2.new(0.056, 0, 0.425, 0)
+	startBody.Size = UDim2.new(0, 400, 0, 60)
+	startBody.Text = "Welcome to the first version of TOGSO!"
+	startBody.TextColor3 = Color3.new(1, 1, 1)
+	startBody.TextScaled = true
+	startBody.Font = "SourceSans"
+	
+	mainFrame.BackgroundColor3 = Color3.new(0.145098, 0.145098, 0.145098)
+	mainFrame.Position = UDim2.new(0.149, 0, 0.212, 0)
+	--mainFrame.Size = UDim2.new(0, 600, 0, 400)
+	mainFrame.Visible = false
+	
+	buttonBackground.BackgroundColor3 = Color3.new(0.27451, 0.27451, 0.27451)
+	buttonBackground.Position = UDim2.new(0, 0, 0.125, 0)
+	--buttonBackground.Size = UDim2.new(0, 600, 0, 50)
+	
+	universalButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+	universalButton.Position = UDim2.new(0.042, 0, 0, 0)
+	universalButton.Size = UDim2.new(0, 175, 0, 50)
+	universalButton.Font = Enum.Font.SourceSans
+	universalButton.Text = "Scripts"
+	universalButton.TextColor3 = Color3.new(1, 1, 1)
+	universalButton.TextScaled = true
+	
+	hubsButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+	hubsButton.Position = UDim2.new(0.355, 0, 0, 0)
+	hubsButton.Size = UDim2.new(0, 175, 0, 50)
+	hubsButton.Font = Enum.Font.SourceSans
+	hubsButton.Text = "Hubs/GUI's"
+	hubsButton.TextColor3 = Color3.new(1, 1, 1)
+	hubsButton.TextScaled = true
+	
+	AboutButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+	AboutButton.Position = UDim2.new(0.667, 0, 0, 0)
+	AboutButton.Size = UDim2.new(0, 175, 0, 50)
+	AboutButton.Font = Enum.Font.SourceSans
+	AboutButton.Text = "Setting/About"
+	AboutButton.TextColor3 = Color3.new(1, 1, 1)
+	AboutButton.TextScaled = true
+	
+	universalFrame.BackgroundColor3 = Color3.new(0.172549, 0.172549, 0.172549)
+	universalFrame.Position = UDim2.new(0.018, 0, 0.273, 0)
+	universalFrame.Size = UDim2.new(0, 589, 0, 291)
+	universalFrame.Visible = false
+	universalFrame.BorderSizePixel = 0
+	
+	hubsFrame.BackgroundColor3 = Color3.new(0.172549, 0.172549, 0.172549)
+	hubsFrame.Position = UDim2.new(0.018, 0, 0.273, 0)
+	hubsFrame.Size = UDim2.new(0, 589, 0, 291)
+	hubsFrame.Visible = false
+	hubsFrame.BorderSizePixel = 0
+	
+	aboutFrame.BackgroundColor3 = Color3.new(0.172549, 0.172549, 0.172549)
+	aboutFrame.Position = UDim2.new(0.018, 0, 0.273, 0)
+	aboutFrame.Size = UDim2.new(0, 589, 0, 291)
+	aboutFrame.Visible = false
+	
+	fly.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	fly.Font = Enum.Font.SourceSans
+	fly.Text = "Fly (Press "..flyDisableKeybind.Name.." to stop)"
+	fly.TextColor3 = Color3.new(1, 1, 1)
+	fly.TextScaled = true
+	
+	teleportGuiButton.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	teleportGuiButton.Font = Enum.Font.SourceSans
+	teleportGuiButton.Text = "Teleport GUI (Toggle)"
+	teleportGuiButton.TextColor3 = Color3.new(1, 1, 1)
+	teleportGuiButton.TextScaled = true
+	
+	infjump.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	infjump.Font = Enum.Font.SourceSans
+	infjump.Text = "Infinite Jump"
+	infjump.TextColor3 = Color3.new(1, 1, 1)
+	infjump.TextScaled = true
+	
+	evadeHubButton.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	evadeHubButton.Font = Enum.Font.SourceSans
+	evadeHubButton.Text = "Evade GUI"
+	evadeHubButton.TextColor3 = Color3.new(1, 1, 1)
+	evadeHubButton.TextScaled = true
+	
+	titleFrameMain.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	titleFrameMain.Position = UDim2.new(0, 0, 0, 0)
+	titleFrameMain.Size = UDim2.new(0, 600, 0, 50)
+	
+	title.BackgroundTransparency = 1
+	title.Position = UDim2.new(0, 0, 0, 0)
+	title.Size = UDim2.new(0, 600, 0, 50)
+	title.Font = Enum.Font.SourceSans
+	title.Text = "TOGSO v1.0"
+	title.TextColor3 = Color3.new(1, 1, 1)
+	title.TextScaled = true
+	
+	hello.BackgroundTransparency = 1
+	hello.Position = UDim2.new(0.333, 0, 0.545, 0)
+	hello.Size = UDim2.new(0, 200, 0, 50)
+	hello.Text = "Press Right Shift To Toggle GUI OR change in settings"
+	hello.TextColor3 = Color3.new(1, 1, 1)
+	hello.TextScaled = true
+	
+	midSplit.BackgroundColor3 = Color3.new(1, 1, 1)
+	midSplit.Position = UDim2.new(0.457, 0, 0, 0)
+	midSplit.Size = UDim2.new(0, 13, 0, 290)
+	
+	guiKillButton.BackgroundColor3 = Color3.new(0.611765, 0, 0)
+	guiKillButton.Position = UDim2.new(0.569, 0, 0.271, 0)
+	guiKillButton.Size = UDim2.new(0, 200, 0, 50)
+	guiKillButton.Text = "Kill GUI"
+	guiKillButton.TextScaled = true
+	guiKillButton.TextColor3 = Color3.new(1, 1, 1)
+	
+	
+	patchNotesDesc.BackgroundTransparency = 1
+	patchNotesDesc.Position = UDim2.new(0, 0, 0.223, 0)
+	patchNotesDesc.Size = UDim2.new(0, 269, 0, 50)
+	patchNotesDesc.Font = Enum.Font.SourceSans
+	patchNotesDesc.Text = "-This is the very first version of TOGSO!"
+	patchNotesDesc.TextColor3 = Color3.new(1, 1, 1)
+	patchNotesDesc.TextScaled = true
+	
+	line.BackgroundTransparency = 1
+	line.Position = UDim2.new(0, 0, 0.1, 0)
+	line.Size = UDim2.new(0, 269, 0, 50)
+	line.Font = Enum.Font.SourceSans
+	line.Text = "-----------------------"
+	line.TextColor3 = Color3.new(1, 1, 1)
+	line.TextScaled = true
+	
+	line2.BackgroundTransparency = 1
+	line2.Position = UDim2.new(0.479, 0, 0.1, 0)
+	line2.Size = UDim2.new(0, 307, 0, 50)
+	line2.Font = Enum.Font.SourceSans
+	line2.Text = "-----------------------"
+	line2.TextColor3 = Color3.new(1, 1, 1)
+	line2.TextScaled = true
+	
+	patchNotesTitle.BackgroundTransparency = 1
+	patchNotesTitle.Position = UDim2.new(0, 0, 0, 0)
+	patchNotesTitle.Size = UDim2.new(0, 269, 0, 50)
+	patchNotesTitle.Font = Enum.Font.SourceSans
+	patchNotesTitle.Text = "Patch Notes"
+	patchNotesTitle.TextColor3 = Color3.new(1, 1, 1)
+	patchNotesTitle.TextScaled = true
+	
+	settingsTitle.BackgroundTransparency = 1
+	settingsTitle.Position = UDim2.new(0.511, 0, 0, 0)
+	settingsTitle.Size = UDim2.new(0, 269, 0, 50)
+	settingsTitle.Font = Enum.Font.SourceSans
+	settingsTitle.Text = "Settings"
+	settingsTitle.TextColor3 = Color3.new(1, 1, 1)
+	settingsTitle.TextScaled = true
+	
+	KeybindsButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+	KeybindsButton.Position = UDim2.new(0.569, 0, 0.481, 0)
+	KeybindsButton.Size = UDim2.new(0, 200, 0, 50)
+	KeybindsButton.Text = "Keybinds"
+	KeybindsButton.TextScaled = true
+	KeybindsButton.TextColor3 = Color3.new(1, 1, 1)
+	
+	flyKeybindButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+	flyKeybindButton.Text = "Disable FLY keybind"
+	flyKeybindButton.TextScaled = true
+	flyKeybindButton.TextColor3 = Color3.new(1, 1, 1)
+	
+	teleportFrame.BackgroundColor3 = Color3.new(0.145098, 0.145098, 0.145098)
+	teleportFrame.Position = UDim2.new(0.718, 0, 0.259, 0)
+	teleportFrame.Size = UDim2.new(0, 150, 0, 300)
+	teleportFrame.ZIndex = 2
+	teleportFrame.Visible = false
+	
+	teleportScrollFrame.BackgroundTransparency = 1
+	teleportScrollFrame.Position = UDim2.new(0, 0, 0.083, 0)
+	teleportScrollFrame.Size = UDim2.new(0, 150, 0, 275)
+	teleportScrollFrame.ZIndex = 2
+	
+	teleportTitle.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	teleportTitle.Position = UDim2.new(0, 0, 0, 0)
+	teleportTitle.Size = UDim2.new(0, 150, 0, 25)
+	teleportTitle.Text = "Teleport"
+	teleportTitle.TextColor3 = Color3.new(1, 1, 1)
+	teleportTitle.TextScaled = true
+	teleportTitle.ZIndex = 2
+	
+	LEguiButton.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	LEguiButton.Font = Enum.Font.SourceSans
+	LEguiButton.Text = "Lab Expermient GUI"
+	LEguiButton.TextColor3 = Color3.new(1, 1, 1)
+	LEguiButton.TextScaled = true
+	
+	qToNoclip.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	qToNoclip.Font = Enum.Font.SourceSans
+	qToNoclip.Text = "Press "..bindForNoclipping.Name.." to noclip"
+	qToNoclip.TextColor3 = Color3.new(1, 1, 1)
+	qToNoclip.TextScaled = true
+	
+	localBtools.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	localBtools.Font = Enum.Font.SourceSans
+	localBtools.Text = "Local Btools"
+	localBtools.TextColor3 = Color3.new(1, 1, 1)
+	localBtools.TextScaled = true
+	
+	localDelButton.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	localDelButton.Font = Enum.Font.SourceSans
+	localDelButton.Text = "Local Delete Button"
+	localDelButton.TextColor3 = Color3.new(1, 1, 1)
+	localDelButton.TextScaled = true
+	
+	kys.BackgroundColor3 = Color3.new(0.486183, 0, 0)
+	kys.Font = Enum.Font.SourceSans
+	kys.Text = "Suicide"
+	kys.TextColor3 = Color3.new(1, 1, 1)
+	kys.TextScaled = true
+	
+	walkSpeedGuiButton.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	walkSpeedGuiButton.Font = Enum.Font.SourceSans
+	walkSpeedGuiButton.Text = "Walk Speed GUI (Toggle)"
+	walkSpeedGuiButton.TextColor3 = Color3.new(1, 1, 1)
+	walkSpeedGuiButton.TextScaled = true
+	
+	jumpPowerGuiButton.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	jumpPowerGuiButton.Font = Enum.Font.SourceSans
+	jumpPowerGuiButton.Text = "Jump Power GUI (Toggle)"
+	jumpPowerGuiButton.TextColor3 = Color3.new(1, 1, 1)
+	jumpPowerGuiButton.TextScaled = true
+	
+	walkspeedFrame.BackgroundColor3 = Color3.new(0.145098, 0.145098, 0.145098)
+	walkspeedFrame.Position = UDim2.new(0.603, 0, 0.095, 0)
+	walkspeedFrame.Size = UDim2.new(0, 285, 0, 200)
+	walkspeedFrame.Visible = false
+	
+	jumppowerFrame.BackgroundColor3 = Color3.new(0.145098, 0.145098, 0.145098)
+	jumppowerFrame.Position = UDim2.new(0.603, 0, 0.406, 0)
+	jumppowerFrame.Size = UDim2.new(0, 285, 0, 200)
+	jumppowerFrame.Visible = false
+	
+	setWalk.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	setWalk.TextColor3 = Color3.new(1, 1, 1)
+	setWalk.Position = UDim2.new(0, 0, 0.75, 0)
+	setWalk.Size = UDim2.new(0, 285, 0, 50)
+	setWalk.Font = Enum.Font.SourceSans
+	setWalk.TextScaled = true
+	setWalk.Text = "Set"
+	
+	setJump.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	setJump.TextColor3 = Color3.new(1, 1, 1)
+	setJump.Position = UDim2.new(0, 0, 0.75, 0)
+	setJump.Size = UDim2.new(0, 285, 0, 50)
+	setJump.Font = Enum.Font.SourceSans
+	setJump.TextScaled = true
+	setJump.Text = "Set"
+	
+	walktxtbox.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	walktxtbox.TextColor3 = Color3.new(1, 1, 1)
+	walktxtbox.Position = UDim2.new(0, 0, 0.375, 0)
+	walktxtbox.Size = UDim2.new(0, 285, 0, 50)
+	walktxtbox.TextScaled = true
+	walktxtbox.Text = char.Humanoid.WalkSpeed
+	
+	jumptxtbox.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	jumptxtbox.TextColor3 = Color3.new(1, 1, 1)
+	jumptxtbox.Position = UDim2.new(0, 0, 0.375, 0)
+	jumptxtbox.Size = UDim2.new(0, 285, 0, 50)
+	jumptxtbox.TextScaled = true
+	jumptxtbox.Text = char.Humanoid.JumpPower
+	
+	walkTitle.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	walkTitle.TextColor3 = Color3.new(1, 1, 1)
+	walkTitle.Position = UDim2.new(0, 0, 0, 0)
+	walkTitle.Size = UDim2.new(0, 285, 0, 50)
+	walkTitle.Font = Enum.Font.SourceSans
+	walkTitle.TextScaled = true
+	walkTitle.Text = "Walk Speed"
+	
+	jumpTitle.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	jumpTitle.TextColor3 = Color3.new(1, 1, 1)
+	jumpTitle.Position = UDim2.new(0, 0, 0, 0)
+	jumpTitle.Size = UDim2.new(0, 285, 0, 50)
+	jumpTitle.Font = Enum.Font.SourceSans
+	jumpTitle.TextScaled = true
+	jumpTitle.Text = "Jump Power"
+	
+	noclipTool.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	noclipTool.Font = Enum.Font.SourceSans
+	noclipTool.Text = "Noclip Tool (Local)"
+	noclipTool.TextColor3 = Color3.new(1, 1, 1)
+	noclipTool.TextScaled = true
+	
+	bindsFrame.BackgroundColor3 = Color3.new(0.145098, 0.145098, 0.145098)
+	bindsFrame.Visible = false
+	bindsFrame.Position = UDim2.new(0.226, 0, 0.242, 0)
+	bindsFrame.Size = UDim2.new(0, 600, 0, 350)
+	
+	bindsScrollingFrame.BackgroundTransparency = 1
+	bindsScrollingFrame.Position = UDim2.new(0.015, 0, 0.194, 0)
+	bindsScrollingFrame.Size = UDim2.new(0, 591, 0, 282)
+	
+	bindsX.BackgroundColor3 = Color3.new(0.0784314, 0.0784314, 0.0784314)
+	bindsX.Position = UDim2.new(0.917, 0, 0, 0)
+	bindsX.Size = UDim2.new(0, 50, 0, 50)
+	bindsX.Text = "X"
+	bindsX.TextScaled = true
+	bindsX.TextColor3 = Color3.new(1, 0, 0)
+	bindsX.ZIndex = 2
+	
+	bindTitle.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	bindTitle.Size = UDim2.new(0, 600, 0, 60)
+	bindTitle.Text = "Keybinds"
+	bindTitle.TextColor3 = Color3.new(1, 1, 1)
+	bindTitle.TextScaled = true
+	
+	GuiToggleBindButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+	GuiToggleBindButton.Text = "Toggle GUI"
+	GuiToggleBindButton.TextColor3 = Color3.new(1, 1, 1)
+	GuiToggleBindButton.TextScaled = true
+	
+	qnoclipbindbutton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+	qnoclipbindbutton.Text = "Noclip Keybind"
+	qnoclipbindbutton.TextColor3 = Color3.new(1, 1, 1)
+	qnoclipbindbutton.TextScaled = true
+	
+	animationsHub.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	animationsHub.Font = Enum.Font.SourceSans
+	animationsHub.Text = "Animations"
+	animationsHub.TextColor3 = Color3.new(1, 1, 1)
+	animationsHub.TextScaled = true
+	
+	spectate.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	spectate.Font = Enum.Font.SourceSans
+	spectate.Text = "Spectate"
+	spectate.TextColor3 = Color3.new(1, 1, 1)
+	spectate.TextScaled = true
+	
+	reportProblemsFrame.BackgroundColor3 = Color3.new(0.145098, 0.145098, 0.145098)
+	reportProblemsFrame.Position = UDim2.new(0.695, 0, 0.173, 0)
+	reportProblemsFrame.Size = UDim2.new(0, 250, 0, 300)
+	reportProblemsFrame.Visible = false
+	
+	reportProblemsTitle.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	reportProblemsTitle.Size = UDim2.new(0, 249, 0, 50)
+	reportProblemsTitle.Text = "Report Problems/Feedback"
+	reportProblemsTitle.TextColor3 = Color3.new(1, 1, 1)
+	reportProblemsTitle.TextScaled = true
+	reportProblemsTitle.Font = Enum.Font.SourceSans
+	
+	reportProblemsSubmit.BackgroundColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+	reportProblemsSubmit.Position = UDim2.new(0.1, 0, 0.757, 0)
+	reportProblemsSubmit.Size = UDim2.new(0, 200, 0, 50)
+	reportProblemsSubmit.Text = "Submit"
+	reportProblemsSubmit.TextScaled = true
+	reportProblemsSubmit.TextColor3 = Color3.new(1, 1, 1)
+	reportProblemsSubmit.Font = Enum.Font.SourceSans
+	
+	reportProblemsTextBox.BackgroundTransparency = 1
+	reportProblemsTextBox.Position = UDim2.new(0.2, 0, 0.327, 0)
+	reportProblemsTextBox.Size = UDim2.new(0, 150, 0, 100)
+	reportProblemsTextBox.PlaceholderText = "If you have any problems type them out here and press submit."
+	reportProblemsTextBox.TextColor3 = Color3.new(1, 1, 1)
+	reportProblemsTextBox.TextScaled = true
+	reportProblemsTextBox.Font = Enum.Font.SourceSans
+	
+	ReportProblemsButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+	ReportProblemsButton.Position = UDim2.new(0.569, 0, 0.708, 0)
+	ReportProblemsButton.Size = UDim2.new(0, 200, 0, 50)
+	ReportProblemsButton.Text = "Report Problems/Feedback"
+	ReportProblemsButton.TextColor3 = Color3.new(1, 1, 1)
+	ReportProblemsButton.TextScaled = true
+	ReportProblemsButton.Font = Enum.Font.SourceSans
+	
+	reportProblemsX.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	reportProblemsX.Position = UDim2.new(0.852, 0, 0.167, 0)
+	reportProblemsX.Size = UDim2.new(0, 35, 0, 35)
+	reportProblemsX.Text = "X"
+	reportProblemsX.TextScaled = true
+	reportProblemsX.TextColor3 = Color3.new(1, 0, 0)
+	
+	-- the thing that does the thing
+	
+	startButton.MouseButton1Click:Connect(function()
+		local tweeninfo = TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out, 0, false, 0.2)
+		local properties = {
+			Size = UDim2.new(0, 0, 0, 0)
+		}
+		local tween = tweenservice:Create(startFrame, tweeninfo, properties)
+		
+		local tweeninfo2 = TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out, 0, false, 0.2)
+		local properties2 = {
+			Size = UDim2.new(0, 0, 0, 0)
+		}
+		local tween2 = tweenservice:Create(titleFrame, tweeninfo, properties)
+		
+		tween:Play()
+		tween2:Play()
+		titleStart.Visible = false
+		startButton.Visible = false
+		startBody.Visible = false
+		versionText.Visible = false
+		wait(1)
+		startFrame.Visible = false
+		wait(1)
+		mainFrame.Visible = true
+		tweens()
+	end)
+	
+	universalButton.MouseButton1Click:Connect(function()
+		universalButton.BackgroundColor3 = Color3.new(0.172549, 0.172549, 0.172549)
+		hubsButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+		AboutButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+		hello.Visible = false
+		universalFrame.Visible = true
+		aboutFrame.Visible = false
+		hubsFrame.Visible = false
+	end)
+	
+	AboutButton.MouseButton1Click:Connect(function()
+		AboutButton.BackgroundColor3 = Color3.new(0.172549, 0.172549, 0.172549)
+		hubsButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+		universalButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+		hello.Visible = false
+		universalFrame.Visible = false
+		hubsFrame.Visible = false
+		aboutFrame.Visible = true
+	end)
+	
+	hubsButton.MouseButton1Click:Connect(function()
+		hubsButton.BackgroundColor3 = Color3.new(0.172549, 0.172549, 0.172549)
+		AboutButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+		universalButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+		hello.Visible = false
+		universalFrame.Visible = false
+		hubsFrame.Visible = true
+		aboutFrame.Visible = false
+	end)
+	
+	fly.MouseButton1Click:Connect(function()
+		local User = game:GetService("UserInputService")
+		local player = game:GetService("Players").LocalPlayer
+		local GuiService = game:GetService("StarterGui")
+		local mouse = game.Players.LocalPlayer:GetMouse()
+		
+		local brick = Instance.new("Part", workspace)
+		local holdingWKey = false
+		local holdingSKey = false
+		local holdingAKey = false
+		local holdingDKey = false
+		local holdingSpaceKey = false
+		local holdingControlKey = false
+
+		Speed_1 = -1
+
+		mouse.KeyDown:connect(function(key)
+			if key == "-" then
+				Speed_1 = Speed_1 + 0.2
+				GuiService:SetCore("SendNotification", {Title = "Speed", Text = "Speed has gone down";})
+			end
+		end)
+
+		mouse.KeyDown:connect(function(key)
+			if key == "=" then
+				Speed_1 = Speed_1 - 0.2
+				GuiService:SetCore("SendNotification", {Title = "Speed", Text = "Speed has gone up";})
+			end
+		end)
+
+		mouse.KeyDown:connect(function(key)
+			if key == "m" then
+				if startup  == true then
+					startup = false
+					GuiService:SetCore("SendNotification", {Title = "Speed", Text = "Speed is now disabled";})
+				else
+					startup = true
+					GuiService:SetCore("SendNotification", {Title = "Speed", Text = "Speed is now enabled";})
+
+					local rng = math.random(1, 10000000)
+					brick.Size = Vector3.new(3, 2, 3)
+					brick.CFrame = player.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+					brick.Transparency = 1
+					brick.Anchored = true
+					brick.Name = "Brick#".. rng
+					mouse.KeyDown:connect(function(key)
+						if key == "m" then
+							brick:remove()
+						end
+					end)
+					for i = 1, math.huge do
+						brick.CFrame = player.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+						wait(0)
+					end
+				end
+			end
+		end)
+
+		game:GetService('RunService').Stepped:connect(function()
+			if startup then
+				if WHeld == true then
+					player.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,Speed_1)
+
+				end
+			end
+		end)
+
+		game:GetService('RunService').Stepped:connect(function()
+			if startup then
+				if SHeld == true then
+					player.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-Speed_1)
+				end
+			end
+		end)
+
+		game:GetService('RunService').Stepped:connect(function()
+			if startup then
+				if AHeld == true then
+					player.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(Speed_1,0,0)
+				end
+			end
+		end)
+
+
+		game:GetService('RunService').Stepped:connect(function()
+			if startup then
+				if DHeld == true then
+					player.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-Speed_1,0,0)
+				end
+			end
+		end)
+
+
+		game:GetService('RunService').Stepped:connect(function()
+			if startup then
+				if SpaceHeld == true then
+					player.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0,-Speed_1,0)
+				end
+			end
+		end)
+
+		game:GetService('RunService').Stepped:connect(function()
+			if startup then
+				if ControlHeld == true then
+					player.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0,Speed_1,0)
+				end
+			end
+
+		end)
+
+		User.InputBegan:Connect(function(inputObject)
+			if(inputObject.KeyCode==Enum.KeyCode.W) then
+				holdingWKey = true WHeld = true
+			end
+
+			if(inputObject.KeyCode==Enum.KeyCode.S) then
+				holdingSKey = true SHeld = true
+			end
+
+			if(inputObject.KeyCode==Enum.KeyCode.A) then
+				holdingAKey = true AHeld = true
+			end
+
+			if(inputObject.KeyCode==Enum.KeyCode.D) then
+				holdingDKey = true DHeld = true
+			end
+			if(inputObject.KeyCode==Enum.KeyCode.LeftControl) then
+				holdingControlKey = true ControlHeld = true
+			end
+
+			if(inputObject.KeyCode==Enum.KeyCode.Space) then
+				holdingSpaceKey = true SpaceHeld= true
+			end
+
+			if(inputObject.KeyCode==Enum.KeyCode.W) then
+				holdingUKey = true WHeld = true
+			end
+		end)
+
+		User.InputEnded:Connect(function(inputObject)
+			if(inputObject.KeyCode==Enum.KeyCode.W) then
+				holdingWKey = false WHeld = false
+			end
+
+			if(inputObject.KeyCode==Enum.KeyCode.S) then
+				holdingSKey = false SHeld = false    
+			end
+
+			if(inputObject.KeyCode==Enum.KeyCode.A) then
+				holdingAKey = false AHeld = false    
+			end
+
+			if(inputObject.KeyCode==Enum.KeyCode.D) then
+				holdingDKey = false DHeld = false    
+			end
+
+			if(inputObject.KeyCode==Enum.KeyCode.LeftControl) then
+				holdingShiftKey = false ControlHeld = false    
+			end
+
+			if(inputObject.KeyCode==Enum.KeyCode.Space) then
+				holdingSpaceKey = false SpaceHeld = false
+			end
+		end)
+		
+		UIS.InputBegan:Connect(function(Input)
+			if Input.KeyCode == flyDisableKeybind then
+				brick:Destroy()
+			end
+		end)
+	end)
+	
+	infjump.MouseButton1Click:Connect(function()
+		_G.infinjump = true
+
+		local Player = game:GetService("Players").LocalPlayer
+		local Mouse = Player:GetMouse()
+		Mouse.KeyDown:connect(function(k)
+			if _G.infinjump then
+				if k:byte() == 32 then
+					Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+					Humanoid:ChangeState("Jumping")
+					wait(0.1)
+					Humanoid:ChangeState("Seated")
+				end
+			end
+		end)
+
+		local Player = game:GetService("Players").LocalPlayer
+		local Mouse = Player:GetMouse()
+		Mouse.KeyDown:connect(function(k)
+			k = k:lower()
+			if k == "f" then
+				if _G.infinjump == true then
+					_G.infinjump = false
+				else
+					_G.infinjump = true
+				end
+			end
+		end)
+	end)
+	
+	guiKillButton.MouseButton1Click:Connect(function()
+		screenGui:Destroy()
+	end)
+	
+	KeybindsButton.MouseButton1Click:Connect(function()
+		bindsFrame.Visible = true
+	end)
+	
+	flyKeybindButton.MouseButton1Click:Connect(function()
+		flyKeybindButton.Text = "PRESS ANY KEY"
+		flyKeybindButton.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+		local db = true
+		UIS.InputBegan:Connect(function(Input)
+			if db == true then
+				db = false
+			else
+				return
+			end
+			flyKeybindButton.Text = "CHANGED TO ".. Input.KeyCode.Name .." SUCCESSFULLY"
+			wait(1)
+			flyKeybindButton.Text = "Disable FLY keybind"
+			flyKeybindButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+			flyDisableKeybind = Input.KeyCode
+			fly.Text = "Fly (Press "..flyDisableKeybind.Name.." to stop)"
+		end)
+	end)
+	
+	teleportGuiButton.MouseButton1Click:Connect(function()
+		if teleportFrame.Visible == false then
+			teleportFrame.Visible = true
+		elseif teleportFrame.Visible == true then
+			teleportFrame.Visible = false
+		end
+	end)
+	
+	evadeHubButton.MouseButton1Click:Connect(function()
+		local WorkspacePlayers = game:GetService("Workspace").Game.Players
+		local Players = game:GetService('Players')
+		local localplayer = Players.LocalPlayer
+		local GuiService = game:GetService("GuiService")
+		local Light = game:GetService("Lighting")
+		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+		OrionLib:MakeNotification({
+			Name = "Hydra Network",
+			Content = "Hydra Network is Loading.",
+			Image = "rbxassetid://4483345998",
+			Time = 4
+		})
+		game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+		wait(4)
+		OrionLib:MakeNotification({
+			Name = "Hydra Network",
+			Content = "Hydra Network is Ready!",
+			Image = "rbxassetid://4483345998",
+			Time = 2
+		})
+		local Window = OrionLib:MakeWindow({Name = "Hydra Network |Evade|", HidePremium = false,IntroText = "Evade V2.6", SaveConfig = false, ConfigFolder = "OrionTest"})
+
+		--functions and shit
+		getgenv().money = true
+		getgenv().revivedie = true
+		getgenv().autowistle = true
+		getgenv().autochat = true
+		getgenv().AutoDrink = true
+		getgenv().NoCameraShake = true
+		getgenv().Settings = {
+			moneyfarm = false,
+			afkfarm = false,
+			NoCameraShake = false,
+			Speed = 1450,
+			Jump = 3,
+			reviveTime = 3,
+		}
+
+		local FindAI = function()
+			for _,v in pairs(WorkspacePlayers:GetChildren()) do
+				if not Players:FindFirstChild(v.Name) then
+					return v
+				end
+			end
+		end
+
+		local GetDownedPlr = function()
+			for i,v in pairs(WorkspacePlayers:GetChildren()) do
+				if v:GetAttribute("Downed") then
+					return v
+				end
+			end
+		end
+
+		local revive = function()
+			local downedplr = GetDownedPlr()
+			if downedplr ~= nil and downedplr:FindFirstChild('HumanoidRootPart') then
+				task.spawn(function()
+					while task.wait() do
+						if localplayer.Character then
+							workspace.Game.Settings:SetAttribute("ReviveTime", 2.2)
+							localplayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(downedplr:FindFirstChild('HumanoidRootPart').Position.X, downedplr:FindFirstChild('HumanoidRootPart').Position.Y + 3, downedplr:FindFirstChild('HumanoidRootPart').Position.Z)
+							task.wait()
+							game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(downedplr), false)
+							task.wait(4.5)
+							game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(downedplr), true)
+							game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(downedplr), true)
+							game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(downedplr), true)
+							break
+						end
+					end
+				end)
+			end
+		end
+
+		task.spawn(function()
+			while task.wait() do
+				if Settings.AutoRespawn then
+					if localplayer.Character and localplayer.Character:GetAttribute("Downed") then
+						game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+					end
+				end
+
+				if Settings.NoCameraShake then
+					localplayer.PlayerScripts.CameraShake.Value = CFrame.new(0,0,0) * CFrame.new(0,0,0)
+				end
+				if Settings.moneyfarm then
+					if localplayer.Character and localplayer.Character:GetAttribute("Downed") then
+						game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+						task.wait(3)
+					else
+						revive()
+						task.wait(1)
+					end
+				end
+				if Settings.moneyfarm == false and Settings.afkfarm and localplayer.Character:FindFirstChild('HumanoidRootPart') ~= nil then
+					localplayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(6007, 7005, 8005)
+				end
+			end
+		end)
+
+		function camerashake()
+			while NoCameraShake == true do task.wait()
+				localplayer.PlayerScripts.CameraShake.Value = CFrame.new(0,0,0) * CFrame.new(0,0,0)
+			end
+		end
+
+		function autodrink()
+			while AutoDrink == true do
+				local ohString1 = "Cola"
+				game:GetService("ReplicatedStorage").Events.UseUsable:FireServer(ohString1)
+				wait(6)
+			end
+		end
+
+		function SpamChat()
+			while autochat == true do
+				local ohString1 = "Hydra Network on top"
+				local ohString2 = "All"
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(ohString1, ohString2)
+				wait(1)
+			end
+		end
+
+		function autowistlefunction()
+			while autowistle == true do
+				local ohString1 = "Whistle"
+				local ohBoolean2 = true
+				game:GetService("Players").LocalPlayer.PlayerScripts.Events.KeybindUsed:Fire(ohString1, ohBoolean2)
+				game:GetService("ReplicatedStorage").Events.Whistle:FireServer()
+				wait(5)
+			end
+		end
+
+		function god()
+			while revivedie == true do
+				game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+				wait()
+			end
+		end
+
+		function dofullbright()
+			Light.Ambient = Color3.new(1, 1, 1)
+			Light.ColorShift_Bottom = Color3.new(1, 1, 1)
+			Light.ColorShift_Top = Color3.new(1, 1, 1)
+			game.Lighting.FogEnd = 100000
+			game.Lighting.FogStart = 0
+			game.Lighting.ClockTime = 14
+			game.Lighting.Brightness = 2
+			game.Lighting.GlobalShadows = false
+		end
+
+		function freemoney()
+			while money == true do
+				local ohString1 = "Free money <font color=\"rgb(100,255,100)\">($99999)</font>"
+				game:GetService("Players").LocalPlayer.PlayerGui.HUD.Messages.Use:Fire(ohString1)
+				wait(5)
+			end
+		end
+
+		OrionLib:MakeNotification({
+			Name = "Welcome To Hydra Network",
+			Content = "Thanks for using Hydra Network!",
+			Image = "rbxassetid://4483345998",
+			Time = 5
+		})
+
+
+		function RandomEmote()
+			OrionLib:MakeNotification({
+				Name = "Random Emoting...",
+				Content = "You pressed the Random Emote keybind",
+				Image = "rbxassetid://4483345998",
+				Time = 5
+			})
+		end
+		--tabs
+
+		local MainTab= Window:MakeTab({
+			Name = "Main features",
+			Icon = "rbxassetid://4483345998",
+			PremiumOnly = false
+		})
+
+		local MiscTab= Window:MakeTab({
+			Name = "Extra",
+			Icon = "rbxassetid://4483345998",
+			PremiumOnly = false
+		})
+
+		local ESPTab = Window:MakeTab({
+			Name =  "Esp",
+			Icon = "rbxassetid://4483345998",
+			PremiumOnly = false
+		})
+
+		local TeleportTab= Window:MakeTab({
+			Name = "Teleport",
+			Icon = "rbxassetid://4483345998",
+			PremiumOnly = false
+		})
+
+		local FunTab= Window:MakeTab({
+			Name = "Fun",
+			Icon = "rbxassetid://4483345998",
+			PremiumOnly = false
+		})
+
+		local CreditsTab = Window:MakeTab({
+			Name = "Credits",
+			Icon = "rbxassetid://4483345998",
+			PremiumOnly = true
+		})
+
+		local MiscTab3 = MainTab:AddSection({
+			Name = "Auto Farms"
+		})
+
+		MainTab:AddToggle({
+			Name = "Money Farm",
+			Default = false,
+			Callback = function(Value)
+				Settings.moneyfarm = Value
+			end    
+		})
+
+		MainTab:AddToggle({
+			Name = "Afk Farm",
+			Default = false,
+			Callback = function(Value)
+				Settings.afkfarm = Value
+			end    
+		})
+
+		--sliders
+		local MainTab3 = MainTab:AddSection({
+			Name = "Sliders"
+		})
+
+		local Misctab5 = MiscTab:AddSection({
+			Name = "Sliders"
+		})
+
+		local TargetWalkspeed
+		MainTab:AddSlider({
+			Name = "Speed",
+			Min = 0,
+			Max = 250,
+			Default = 0,
+			Color = Color3.fromRGB(128, 128, 128),
+			Increment = 1,
+			ValueName = "Walk Speed",
+			Callback = function(Value)
+				TargetWalkspeed = Value
+			end   
+		})
+
+		MainTab:AddSlider({
+			Name = "Hip height",
+			Min = -1.40,
+			Max = 100,
+			Default = -1.40,
+			Color = Color3.fromRGB(128, 128, 128),
+			Increment = 1,
+			ValueName = "Hip Height",
+			Callback = function(HipValue)
+				game.Players.LocalPlayer.Character.Humanoid.HipHeight = HipValue
+			end    
+		})
+
+		MainTab:AddSlider({
+			Name = "Fov Slider",
+			Min = 1,
+			Max = 120,
+			Default = 70,
+			Color = Color3.fromRGB(128, 128, 128),
+			Increment = 1,
+			ValueName = "Fov",
+			Callback = function(Fov)
+				local ohString1 = "FieldOfView"
+				local ohNumber2 = Fov
+				game:GetService("ReplicatedStorage").Events.UpdateSetting:FireServer(ohString1, ohNumber2)
+			end
+		})
+
+		MainTab:AddSlider({
+			Name = "Jump Power",
+			Min = 0,
+			Max = 120,
+			Default = 3,
+			Color = Color3.fromRGB(128, 128, 128),
+			Increment = 1,
+			ValueName = "Jump",
+			Callback = function(Value)
+				Settings.Jump = Value
+			end
+		})
+
+		MiscTab:AddSlider({
+			Name = "Day & night Slider",
+			Min = 0,
+			Max = 24,
+			Default = 14,
+			Color = Color3.fromRGB(128, 128, 128),
+			Increment = 0.1,
+			ValueName = "Time",
+			Callback = function(Time)
+				game.Lighting.ClockTime = Time
+			end
+		})
+
+		--toggles
+
+		local FunTab2 = FunTab:AddSection({
+			Name = "Toggles"
+		})
+
+		local MiscTab3 = MainTab:AddSection({
+			Name = "Toggles"
+		})
+
+		MainTab:AddToggle({
+			Name = "No Camera Shake",
+			Default = false,
+			Callback = function(Value)
+				NoCameraShake = Value
+				camerashake()
+			end    
+		})
+
+		MainTab:AddToggle({
+			Name = "Auto Drink Cola (drinks everytime it runs out)",
+			Default = false,
+			Callback = function(Value)
+				AutoDrink = Value
+				autodrink()
+			end    
+		})
+
+		FunTab:AddToggle({
+			Name = "Spam Chat",
+			Default = false,
+			Callback = function(Value)
+				autochat = Value
+				SpamChat()
+			end    
+		})
+
+		FunTab:AddToggle({
+			Name = "fake money giver",
+			Default = false,
+			Callback = function(Value)
+				money = Value
+				freemoney()
+			end    
+		})
+
+		MainTab:AddToggle({
+			Name = "auto respawn (you respawn when you get downed)",
+			Default = false,
+			Callback = function(Value)
+				Settings.AutoRespawn = Value
+			end    
+		})
+
+		FunTab:AddToggle({
+			Name = "Auto Wistle",
+			Default = false,
+			Callback = function(Value)
+				autowistle = Value
+				autowistlefunction()
+			end    
+		})
+
+		--buttons
+		local FunTab3 = FunTab:AddSection({
+			Name = "Buttons"
+		})
+
+		local MiscTab2 = MiscTab:AddSection({
+			Name = "Buttons"
+		})
+
+		MiscTab:AddButton({
+			Name = "Chat Spy",
+			Callback = function()
+				enabled = true
+				spyOnMyself = false
+				public = false
+				publicItalics = true
+				privateProperties = {
+					Color = Color3.fromRGB(0,255,255); 
+					Font = Enum.Font.SourceSansBold;
+					TextSize = 18;
+				}
+				local StarterGui = game:GetService("StarterGui")
+				local Players = game:GetService("Players")
+				local player = Players.LocalPlayer
+				local saymsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
+				local getmsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
+				local instance = (_G.chatSpyInstance or 0) + 1
+				_G.chatSpyInstance = instance
+
+				local function onChatted(p,msg)
+					if _G.chatSpyInstance == instance then
+						if p==player and msg:lower():sub(1,4)=="/spy" then
+							enabled = not enabled
+							wait(0.3)
+							privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+							StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+						elseif enabled and (spyOnMyself==true or p~=player) then
+							msg = msg:gsub("[\n\r]",''):gsub("\t",' '):gsub("[ ]+",' ')
+							local hidden = true
+							local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
+								if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and public==false and Players[packet.FromSpeaker].Team==player.Team)) then
+									hidden = false
+								end
+							end)
+							wait(1)
+							conn:Disconnect()
+							if hidden and enabled then
+								if public then
+									saymsg:FireServer((publicItalics and "/me " or '').."{SPY} [".. p.Name .."]: "..msg,"All")
+								else
+									privateProperties.Text = "{SPY} [".. p.Name .."]: "..msg
+									StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+								end
+							end
+						end
+					end
+				end
+
+				for _,p in ipairs(Players:GetPlayers()) do
+					p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+				end
+				Players.PlayerAdded:Connect(function(p)
+					p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+				end)
+				privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+				StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+				local chatFrame = player.PlayerGui.Chat.Frame
+				chatFrame.ChatChannelParentFrame.Visible = true
+				chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
+				OrionLib:MakeNotification({
+					Name = "Hydra Network",
+					Content = "Pressed on the Chat Spy Button",
+					Image = "rbxassetid://4483345998",
+					Time = 2
+				})    
+			end    
+		})
+
+		ESPTab:AddButton({
+			Name = "Player Esp",
+			Callback = function()
+				local c = workspace.CurrentCamera
+				local ps = game:GetService("Players")
+				local lp = ps.LocalPlayer
+				local rs = game:GetService("RunService")
+				local function getdistancefc(part)
+					return (part.Position - c.CFrame.Position).Magnitude
+				end
+				local function esp(p, cr)
+					local h = cr:WaitForChild("Humanoid")
+					local hrp = cr:WaitForChild("HumanoidRootPart")
+					local text = Drawing.new("Text")
+					text.Visible = false
+					text.Center = true
+					text.Outline = true
+					text.Font = 2
+					text.Color = Color3.fromRGB(255, 255, 255)
+					text.Size = 17
+					local c1
+					local c2
+					local c3
+					local function dc()
+						text.Visible = false
+						text:Remove()
+						if c1 then
+							c1:Disconnect()
+							c1 = nil
+						end
+						if c2 then
+							c2:Disconnect()
+							c2 = nil
+						end
+						if c3 then
+							c3:Disconnect()
+							c3 = nil
+						end
+					end
+					c2 =
+						cr.AncestryChanged:Connect(
+							function(_, parent)
+								if not parent then
+								dc()
+							end
+							end
+						)
+					c3 =
+						h.HealthChanged:Connect(
+							function(v)
+								if (v <= 0) or (h:GetState() == Enum.HumanoidStateType.Dead) then
+								dc()
+							end
+							end
+						)
+					c1 =
+						rs.RenderStepped:Connect(
+							function()
+								local hrp_pos, hrp_os = c:WorldToViewportPoint(hrp.Position)
+								if hrp_os then
+								text.Position = Vector2.new(hrp_pos.X, hrp_pos.Y)
+								text.Text = p.Name .. " (" .. tostring(math.floor(getdistancefc(hrp))) .. " m)"
+								text.Visible = true
+							else
+								text.Visible = false
+							end
+							end
+						)
+				end
+				local function p_added(p)
+					if p.Character then
+						esp(p, p.Character)
+					end
+					p.CharacterAdded:Connect(
+						function(cr)
+							esp(p, cr)
+						end
+					)
+				end
+				for i, p in next, ps:GetPlayers() do
+					if p ~= lp then
+						p_added(p)
+					end
+				end
+				ps.PlayerAdded:Connect(p_added)
+				OrionLib:MakeNotification({
+					Name = "Hydra Network",
+					Content = "Pressed on the Player Esp Button",
+					Image = "rbxassetid://4483345998",
+					Time = 2
+				}) 
+			end    
+		})
+
+		MiscTab:AddButton({
+			Name = "Inf Jump",
+			Callback = function()
+				local InfiniteJumpEnabled = true
+				game:GetService("UserInputService").JumpRequest:connect(function()
+					if InfiniteJumpEnabled then
+						game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+					end
+				end)
+				OrionLib:MakeNotification({
+					Name = "Hydra Network",
+					Content = "Pressed on the Inf Jump Button",
+					Image = "rbxassetid://4483345998",
+					Time = 2
+				}) 
+			end    
+		})
+
+		MiscTab:AddButton({
+			Name = "Q to Teleport",
+			Callback = function()
+				plr = game.Players.LocalPlayer 
+				hum = plr.Character.HumanoidRootPart 
+				mouse = plr:GetMouse()
+				mouse.KeyDown:connect(function(key)
+					if key == "q" then
+						if mouse.Target then
+							hum.CFrame = CFrame.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
+						end
+					end
+				end)
+				OrionLib:MakeNotification({
+					Name = "Hydra Network",
+					Content = "Pressed on the Q To Teleport Button",
+					Image = "rbxassetid://4483345998",
+					Time = 2
+				}) 
+			end    
+		})
+
+		MiscTab:AddButton({
+			Name = "Full Bright",
+			Callback = function()
+				dofullbright()
+				OrionLib:MakeNotification({
+					Name = "Hydra Network",
+					Content = "Pressed on the Full Bright Button",
+					Image = "rbxassetid://4483345998",
+					Time = 2
+				}) 
+			end    
+		})
+
+		MiscTab:AddButton({
+			Name = "Return Too Main Menu",
+			Callback = function()
+				game:GetService("ReplicatedStorage").Events.ReturnToMenu:FireServer()
+			end    
+		})
+
+		MiscTab:AddButton({
+			Name = "Low Quality",
+			Callback = function()
+				local ohString1 = "LowQuality"
+				local ohBoolean2 = true
+				game:GetService("ReplicatedStorage").Events.UpdateSetting:FireServer(ohString1, ohBoolean2)
+				OrionLib:MakeNotification({
+					Name = "Hydra Network",
+					Content = "Pressed on the Low Quality Button",
+					Image = "rbxassetid://4483345998",
+					Time = 2
+				}) 
+			end    
+		})
+
+		FunTab:AddButton({
+			Name = "Free cam (shift + P)",
+			Callback = function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/Robobo2022/script/main/Freecam.lua"))()
+				OrionLib:MakeNotification({
+					Name = "Hydra Network",
+					Content = "Pressed on the Free cam Button",
+					Image = "rbxassetid://4483345998",
+					Time = 2
+				}) 
+			end    
+		})
+
+		TeleportTab:AddButton({
+			Name = "Main Game",
+			Callback = function()
+				local TeleportService = game:GetService('TeleportService')
+				GameId = 9872472334
+				TeleportService:Teleport(GameId, game.Players.LocalPlayer)
+			end    
+		})
+
+
+		TeleportTab:AddButton({
+			Name = "Casual",
+			Callback = function()
+				local TeleportService = game:GetService('TeleportService')
+				GameId = 10662542523
+				TeleportService:Teleport(GameId, game.Players.LocalPlayer)
+			end    
+		})
+
+		TeleportTab:AddButton({
+			Name = "Social Space",
+			Callback = function()
+				local TeleportService = game:GetService('TeleportService')
+				GameId = 10324347967
+				TeleportService:Teleport(GameId, game.Players.LocalPlayer)
+			end    
+		})
+
+		TeleportTab:AddButton({
+			Name = "Big Team",
+			Callback = function()
+				local TeleportService = game:GetService('TeleportService')
+				GameId = 10324346056
+				TeleportService:Teleport(GameId, game.Players.LocalPlayer)
+			end    
+		})
+
+		TeleportTab:AddButton({
+			Name = "Team DeathMatch",
+			Callback = function()
+				local TeleportService = game:GetService('TeleportService')
+				GameId = 110539706691
+				TeleportService:Teleport(GameId, game.Players.LocalPlayer)
+			end    
+		})
+
+		TeleportTab:AddButton({
+			Name = "Vc Only",
+			Callback = function()
+				local TeleportService = game:GetService('TeleportService')
+				GameId = 10808838353
+				TeleportService:Teleport(GameId, game.Players.LocalPlayer)
+			end    
+		})
+
+		local MiscTab2 = MiscTab:AddSection({
+			Name = "Item Giver"
+		})
+
+		MiscTab:AddButton({
+			Name = "Test Emote (Permanant)",
+			Callback = function()
+				game:GetService("ReplicatedStorage").Events.UI.Purchase:InvokeServer("Emotes", "Test")
+			end    
+		})
+
+		--KeybindsButton
+
+		local MiscTab1 = MiscTab:AddSection({
+			Name = "KeyBinds"
+		})
+
+		local FunTab1 = FunTab:AddSection({
+			Name = "KeyBinds"
+		})
+
+		MiscTab:AddBind({
+			Name = "Drink Cola",
+			Default = Enum.KeyCode.H,
+			Hold = false,
+			Callback = function()
+				local ohString1 = "Cola"
+				game:GetService("ReplicatedStorage").Events.UseUsable:FireServer(ohString1)
+			end    
+		})
+
+		MiscTab:AddBind({
+			Name = "Rejoin Server",
+			Default = Enum.KeyCode.B,
+			Hold = false,
+			Callback = function()
+				OrionLib:MakeNotification({
+					Name = "You Pressed the Rejoin Keybind.",
+					Content = "Rejoining in 5 seconds",
+					Image = "rbxassetid://4483345998",
+					Time = 5
+				})
+				wait(1)
+				OrionLib:MakeNotification({
+					Name = "Hydra Network",
+					Content = "Rejoining in 4 seconds",
+					Image = "rbxassetid://4483345998",
+					Time = 5
+				})
+				wait(1)
+				OrionLib:MakeNotification({
+					Name = "Hydra Network",
+					Content = "Rejoining in 3 seconds",
+					Image = "rbxassetid://4483345998",
+					Time = 5
+				})
+				wait(1)
+				OrionLib:MakeNotification({
+					Name = "Hydra Network",
+					Content = "Rejoining in 2 seconds",
+					Image = "rbxassetid://4483345998",
+					Time = 5
+				})
+				wait(1)
+				OrionLib:MakeNotification({
+					Name = "Hydra Network",
+					Content = "Rejoining in 1 seconds",
+					Image = "rbxassetid://4483345998",
+					Time = 5
+				})
+				wait(1)
+				OrionLib:MakeNotification({
+					Name = "Hydra Network",
+					Content = "Rejoining",
+					Image = "rbxassetid://4483345998",
+					Time = 5
+				})
+				local ts = game:GetService("TeleportService")
+				local p = game:GetService("Players").LocalPlayer
+				ts:Teleport(game.PlaceId, p)
+			end    
+		})
+
+		MiscTab:AddBind({
+			Name = "Random Vote",
+			Default = Enum.KeyCode.X,
+			Hold = false,
+			Callback = function()
+				local RandomVote = math.random(3)
+				local ohNumber1 = (RandomVote)
+				game:GetService("ReplicatedStorage").Events.Vote:FireServer(ohNumber1)
+				OrionLib:MakeNotification({
+					Name = "Hydra Network",
+					Content = "Pressed on the Random Vote Keybind",
+					Image = "rbxassetid://4483345998",
+					Time = 2
+				}) 
+			end    
+		})
+
+		MiscTab:AddBind({
+			Name = "Respawn",
+			Default = Enum.KeyCode.R,
+			Hold = false,
+			Callback = function()
+				game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+				OrionLib:MakeNotification({
+					Name = "Respawning...",
+					Content = "You pressed the respawn keybind",
+					Image = "rbxassetid://4483345998",
+					Time = 5
+				})
+			end    
+		})
+
+		FunTab:AddBind({
+			Name = "Random Emote",
+			Default = Enum.KeyCode.Z,
+			Hold = false,
+			Callback = function()
+				local number = math.random(4)
+				local ohString1 = (number)
+				game:GetService("ReplicatedStorage").Events.Emote:FireServer(ohString1)
+				RandomEmote()
+			end    
+		})
+		--test
+
+		ESPTab:AddToggle({
+			Name = "Bots tracers",
+			Default = true,
+			Callback = function(Value)
+				getgenv().toggleespmpt = Value
+			end    
+		})
+
+		ESPTab:AddColorpicker({
+			Name = "Colour",
+			Default = Color3.fromRGB(255, 255, 255),
+			Callback = function(Value)
+				getgenv().mptespcolour = Value
+			end  
+		})
+
+		--credits
+
+		CreditsTab:AddParagraph("Owner/Main Dev","hydra#8270")
+		CreditsTab:AddParagraph("Credits","Felix and ss.spooky.ss")
+		CreditsTab:AddParagraph("Credits","xCLY And batusd")
+		CreditsTab:AddParagraph("Credits","Truncated Cuboctahedron")
+
+
+		local cam = workspace.CurrentCamera
+		local rs = game:GetService'RunService'
+
+		getgenv().toggleespmpt = true
+		function esp(plr)
+			if game:GetService'Players':GetPlayerFromCharacter(plr) == nil then
+				local rat = Drawing.new("Line")
+				rs.RenderStepped:Connect(function()
+					if plr:FindFirstChild'HumanoidRootPart' then
+						local vector,screen = cam:WorldToViewportPoint(plr.HumanoidRootPart.Position)
+						if screen then
+							rat.Visible = toggleespmpt
+							rat.From = Vector2.new(cam.ViewportSize.X / 2,cam.ViewportSize.Y / 1)
+							rat.To = Vector2.new(vector.X,vector.Y)
+							rat.Color = getgenv().mptespcolour
+							rat.Thickness = getgenv().mptespthickness
+						else
+							rat.Visible = false
+						end
+					else
+						pcall(function()
+							rat.Visible = false
+						end)
+					end
+					if not plr:FindFirstChild'HumanoidRootPart' or not plr:FindFirstChild'HumanoidRootPart':IsDescendantOf(game:GetService'Workspace') then
+						pcall(function()
+							rat:Remove()
+						end)
+					end
+				end)
+			end
+		end
+
+		for i,v in pairs(game:GetService'Workspace'.Game.Players:GetChildren()) do
+			esp(v)
+		end
+
+		game:GetService'Workspace'.Game.Players.ChildAdded:Connect(function(plr)
+			esp(plr)
+		end)
+
+		local old
+		old = hookmetamethod(game,"__namecall",newcclosure(function(self,...)
+			local Args = {...}
+			local method = getnamecallmethod()
+			if tostring(self) == 'Communicator' and method == "InvokeServer" and Args[1] == "update" then
+				return Settings.Speed, Settings.Jump 
+			end
+			return old(self,...)
+		end))
+
+		setclipboard("https://discord.gg/k9a4zym5uG")
+
+		OrionLib:MakeNotification({
+			Name = "Join Discord",
+			Content = "Join the Discord Copied in your clip Board",
+			Image = "rbxassetid://4483345998",
+			Time = 5
+		})
+
+		game:GetService("RunService").RenderStepped:Connect(function()
+			pcall(function()
+				if game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 then
+					game.Players.LocalPlayer.Character:TranslateBy(game.Players.LocalPlayer.Character.Humanoid.MoveDirection * TargetWalkspeed/100)
+				end
+			end)
+		end)
+
+		OrionLib:Init()
+	end)
+	
+	LEguiButton.MouseButton1Click:Connect(function()
+		----------------------------------------------
+
+		-- Lab Experiment GUI (LEGUI) Made by Gaming Chair#7643
+
+		----------------------------------------------
+
+		-- Variables
+
+		local plr = game.Players.LocalPlayer
+		local char = plr.Character
+		local humRP = char.HumanoidRootPart
+		local closed = false
+		local dragToggle = nil
+		local dragSpeed = 0.01
+		local dragStart = nil
+		local startPos = nil
+		local UIS = game:GetService("UserInputService")
+		local uiCorner = Instance.new("UICorner")
+		local uiStroke = Instance.new("UIStroke")
+
+		------------------------------------------
+
+		uiCorner.CornerRadius = UDim.new(1, 8)
+		uiStroke.ApplyStrokeMode = "Border"
+
+		------------------------------------------
+
+		local screenGui = Instance.new("ScreenGui")
+		local LEGUIMain = Instance.new("Frame")
+		local Title = Instance.new("TextLabel")
+		local noclipButton = Instance.new("TextButton")
+		local infjumpButton = Instance.new("TextButton")
+		local delLava = Instance.new("TextButton")
+		local platform = Instance.new("TextButton")
+		local suicide = Instance.new("TextButton")
+		local deleteWall = Instance.new("TextButton")
+		local credits = Instance.new("TextLabel")
+		local walkspeedGUI = Instance.new("TextButton")
+		local jumppowerGUI = Instance.new("TextButton")
+		local teleportsGUI = Instance.new("TextButton")
+		local x = Instance.new("TextButton", LEGUIMain)
+		local uiCorner1 = uiCorner:Clone()
+		local uiStroke1 = uiStroke:Clone()
+		local uiCorner2 = uiCorner:Clone()
+		local uiStroke2 = uiStroke:Clone()
+		local uiCorner3 = uiCorner:Clone()
+		local uiStroke3 = uiStroke:Clone()
+		local uiCorner4 = uiCorner:Clone()
+		local uiStroke4 = uiStroke:Clone()
+		local uiCorner5 = uiCorner:Clone()
+		local uiStroke5 = uiStroke:Clone()
+		local uiCorner6 = uiCorner:Clone()
+		local uiStroke6 = uiStroke:Clone()
+		local uiCorner7 = uiCorner:Clone()
+		local uiStroke7 = uiStroke:Clone()
+		local uiCorner8 = uiCorner:Clone()
+		local uiStroke8 = uiStroke:Clone()
+		local uiCorner9 = uiCorner:Clone()
+		local uiStroke9 = uiStroke:Clone()
+		local uiCorner10 = uiCorner:Clone()
+		local uiStroke10 = uiStroke:Clone()
+		local uiCorner11 = uiCorner:Clone()
+		local uiStroke11 = uiStroke:Clone()
+		local uiCorner12 = uiCorner:Clone()
+		local uiStroke12 = uiStroke:Clone()
+		local uiCorner13 = Instance.new("UICorner", x)
+		local uiStroke13 = Instance.new("UIStroke", x)
+
+		-- Toggle GUI
+
+		UIS.InputBegan:Connect(function(input)
+
+			if input.UserInputType == Enum.UserInputType.Keyboard then
+
+				if input.KeyCode == Enum.KeyCode.RightAlt then
+
+					if closed == false then
+						LEGUIMain.Visible = false
+						closed = true
+					elseif closed == true then
+						LEGUIMain.Visible = true
+						closed = false
+					end
+				end
+			end
+		end)
+
+		-- Drag
+
+		local function updateInput(input)
+			local delta = input.Position - dragStart
+			local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+				startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+			game:GetService('TweenService'):Create(LEGUIMain, TweenInfo.new(dragSpeed), {Position = position}):Play()
+		end
+
+		LEGUIMain.InputBegan:Connect(function(input)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+				dragToggle = true
+				dragStart = input.Position
+				startPos = LEGUIMain.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragToggle = false
+					end
+				end)
+			end
+		end)
+
+		UIS.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement then
+				if dragToggle then
+					updateInput(input)
+				end
+			end
+		end)
+
+		-- Parents
+
+		screenGui.Parent = plr.PlayerGui
+		LEGUIMain.Parent = screenGui
+		Title.Parent = LEGUIMain
+		noclipButton.Parent = LEGUIMain
+		infjumpButton.Parent = LEGUIMain
+		delLava.Parent = LEGUIMain
+		platform.Parent = LEGUIMain
+		suicide.Parent = LEGUIMain
+		deleteWall.Parent = LEGUIMain
+		credits.Parent = LEGUIMain
+		walkspeedGUI.Parent = LEGUIMain
+		jumppowerGUI.Parent = LEGUIMain
+		teleportsGUI.Parent = LEGUIMain
+		uiCorner1.Parent = LEGUIMain
+		uiStroke1.Parent = LEGUIMain
+		uiCorner2.Parent = Title
+		uiStroke2.Parent = Title
+		uiCorner3.Parent = noclipButton
+		uiStroke3.Parent = noclipButton
+		uiCorner4.Parent = infjumpButton
+		uiStroke4.Parent = infjumpButton
+		uiCorner5.Parent = delLava
+		uiStroke5.Parent = delLava
+		uiCorner6.Parent = platform
+		uiStroke6.Parent = platform
+		uiCorner7.Parent = suicide
+		uiStroke7.Parent = suicide
+		uiCorner8.Parent = deleteWall
+		uiStroke8.Parent = deleteWall
+		uiCorner9.Parent = credits
+		uiStroke9.Parent = credits
+		uiCorner10.Parent = walkspeedGUI
+		uiStroke10.Parent = walkspeedGUI
+		uiCorner11.Parent = jumppowerGUI
+		uiStroke11.Parent = jumppowerGUI
+		uiCorner12.Parent = teleportsGUI
+		uiStroke12.Parent = teleportsGUI
+
+
+		-- Names
+
+		screenGui.Name = "LEGui"
+		LEGUIMain.Name = "LEGUIMain"
+		Title.Name = "Title"
+		credits.Name = "Credits"
+
+		-- Properties
+
+		screenGui.ResetOnSpawn = false
+		uiCorner1.CornerRadius = UDim.new(0, 8)
+		uiStroke1.ApplyStrokeMode = "Contextual"
+		uiCorner2.CornerRadius = UDim.new(0, 8)
+		LEGUIMain.BackgroundColor3 = Color3.new(1, 1, 1)
+		LEGUIMain.Position = UDim2.new(0.346, 0, 0.342, 0)
+		LEGUIMain.Size = UDim2.new(0, 600, 0, 400)
+		Title.BackgroundColor3 = Color3.new(0, 170, 255)
+		Title.Position = UDim2.new(0, 0, 0, 0)
+		Title.Size = UDim2.new(0, 600, 0, 75)
+		Title.Font = "FredokaOne"
+		Title.Text = "LE Gui"
+		Title.TextColor3 = Color3.new(1, 1, 1)
+		Title.TextScaled = true
+		credits.BackgroundColor3 = Color3.new(0, 170, 255)
+		credits.Position = UDim2.new(0.012, 0, 0.858, 0)
+		credits.Size = UDim2.new(0, 585, 0, 49)
+		credits.Font = "FredokaOne"
+		credits.Text = "Made by Gaming Chair#7643"
+		credits.TextColor3 = Color3.new(1, 1, 1)
+		credits.TextScaled = true
+		noclipButton.BackgroundColor3 = Color3.new(0, 170, 255)
+		noclipButton.Position = UDim2.new(0.012, 0, 0.228, 0)
+		noclipButton.Size = UDim2.new(0, 182, 0, 50)
+		noclipButton.Text = "Press Q to Noclip"
+		noclipButton.Font = "FredokaOne"
+		noclipButton.TextColor3 = Color3.new(1, 1, 1)
+		noclipButton.TextScaled = true
+		infjumpButton.BackgroundColor3 = Color3.new(0, 170, 255)
+		infjumpButton.Position = UDim2.new(0.347, 0, 0.228, 0)
+		infjumpButton.Size = UDim2.new(0, 182, 0, 50)
+		infjumpButton.Text = "Infinite Jump"
+		infjumpButton.Font = "FredokaOne"
+		infjumpButton.TextColor3 = Color3.new(1, 1, 1)
+		infjumpButton.TextScaled = true
+		delLava.BackgroundColor3 = Color3.new(0, 170, 255)
+		delLava.Position = UDim2.new(0.683, 0, 0.228, 0)
+		delLava.Size = UDim2.new(0, 182, 0, 50)
+		delLava.Text = "Delete Lava"
+		delLava.Font = "FredokaOne"
+		delLava.TextColor3 = Color3.new(1, 1, 1)
+		delLava.TextScaled = true
+		platform.BackgroundColor3 = Color3.new(0, 170, 255)
+		platform.Position = UDim2.new(0.012, 0, 0.438, 0)
+		platform.Size = UDim2.new(0, 182, 0, 50)
+		platform.Text = "Platform"
+		platform.Font = "FredokaOne"
+		platform.TextColor3 = Color3.new(1, 1, 1)
+		platform.TextScaled = true
+		suicide.BackgroundColor3 = Color3.new(0, 170, 255)
+		suicide.Position = UDim2.new(0.348, 0, 0.438, 0)
+		suicide.Size = UDim2.new(0, 182, 0, 50)
+		suicide.Text = "Suicide"
+		suicide.Font = "FredokaOne"
+		suicide.TextColor3 = Color3.new(1, 1, 1)
+		suicide.TextScaled = true
+		deleteWall.BackgroundColor3 = Color3.new(0, 170, 255)
+		deleteWall.Position = UDim2.new(0.683, 0, 0.438, 0)
+		deleteWall.Size = UDim2.new(0, 182, 0, 50)
+		deleteWall.Text = "Delete Kill Wall"
+		deleteWall.Font = "FredokaOne"
+		deleteWall.TextColor3 = Color3.new(1, 1, 1)
+		deleteWall.TextScaled = true
+		walkspeedGUI.BackgroundColor3 = Color3.new(0, 170, 255)
+		walkspeedGUI.Position = UDim2.new(0.012, 0, 0.648, 0)
+		walkspeedGUI.Size = UDim2.new(0, 182, 0, 50)
+		walkspeedGUI.Text = "Walkspeed GUI"
+		walkspeedGUI.Font = "FredokaOne"
+		walkspeedGUI.TextColor3 = Color3.new(1, 1, 1)
+		walkspeedGUI.TextScaled = true
+		jumppowerGUI.BackgroundColor3 = Color3.new(0, 170, 255)
+		jumppowerGUI.Position = UDim2.new(0.348, 0, 0.648, 0)
+		jumppowerGUI.Size = UDim2.new(0, 182, 0, 50)
+		jumppowerGUI.Text = "JumpPower GUI"
+		jumppowerGUI.Font = "FredokaOne"
+		jumppowerGUI.TextColor3 = Color3.new(1, 1, 1)
+		jumppowerGUI.TextScaled = true
+		teleportsGUI.BackgroundColor3 = Color3.new(0, 170, 255)
+		teleportsGUI.Position = UDim2.new(0.683, 0, 0.648, 0)
+		teleportsGUI.Size = UDim2.new(0, 182, 0, 50)
+		teleportsGUI.Text = "Coming Soon"
+		teleportsGUI.Font = "FredokaOne"
+		teleportsGUI.TextColor3 = Color3.new(1, 1, 1)
+		teleportsGUI.TextScaled = true
+
+		x.BackgroundColor3 = Color3.new(1, 0, 0)
+		x.Position = UDim2.new(0.918, 0, 0, 0)
+		x.Size = UDim2.new(0, 50, 0, 50)
+		x.Text = "X"
+		x.Font = Enum.Font.FredokaOne
+		x.TextColor3 = Color3.new(1, 1, 1)
+		x.TextScaled = true
+		x.ZIndex = 2
+
+		-- Buttons n stuff
+
+		x.MouseButton1Click:Connect(function()
+			screenGui:Destroy()
+		end)	
+
+		noclipButton.MouseButton1Click:Connect(function()
+			-- Noclip by Alumark on v3rmilion
+			-- Press Q to activate
+
+			local StealthMode = false -- If game has an anticheat that checks the logs
+
+			local Indicator
+
+			if not StealthMode then
+				local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+				print("NOCLIP: Press Q to Activate")
+				Indicator = Instance.new("TextLabel", ScreenGui)
+				Indicator.AnchorPoint = Vector2.new(0, 1)
+				Indicator.Position = UDim2.new(0, 0, 1, 0)
+				Indicator.Size = UDim2.new(0, 200, 0, 50)
+				Indicator.BackgroundTransparency = 1
+				Indicator.TextScaled = true
+				Indicator.TextStrokeTransparency = 0
+				Indicator.TextColor3 = Color3.new(0, 0, 0)
+				Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
+				Indicator.Text = "Noclip: Enabled"
+			end
+
+			local noclip = true
+			local player = game.Players.LocalPlayer
+			local character = player.Character or player.CharacterAdded:Wait()
+
+			local mouse = player:GetMouse()
+
+			mouse.KeyDown:Connect(function(key)
+				if key == "q" then
+					noclip = not noclip
+
+					if not StealthMode then
+						Indicator.Text = "Noclip: " .. (noclip and "Enabled" or "Disabled")
+					end
+				end
+			end)
+
+			while true do
+				player = game.Players.LocalPlayer
+				character = player.Character
+
+				if noclip then
+					for _, v in pairs(character:GetDescendants()) do
+						pcall(function()
+							if v:IsA("BasePart") then
+								v.CanCollide = false
+							end
+						end)
+					end
+				end
+
+				game:GetService("RunService").Stepped:wait()
+			end
+		end)
+
+
+		infjumpButton.MouseButton1Click:Connect(function()
+			_G.infinjump = true
+
+			local Player = game:GetService("Players").LocalPlayer
+			local Mouse = Player:GetMouse()
+			Mouse.KeyDown:connect(function(k)
+				if _G.infinjump then
+					if k:byte() == 32 then
+						Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+						Humanoid:ChangeState("Jumping")
+						wait(0.1)
+						Humanoid:ChangeState("Seated")
+					end
+				end
+			end)
+
+			local Player = game:GetService("Players").LocalPlayer
+			local Mouse = Player:GetMouse()
+			Mouse.KeyDown:connect(function(k)
+				k = k:lower()
+				if k == "f" then
+					if _G.infinjump == true then
+						_G.infinjump = false
+					else
+						_G.infinjump = true
+					end
+				end
+			end)
+		end)
+
+		delLava.MouseButton1Click:Connect(function()
+			if game.Workspace:FindFirstChild("LavaArea") then
+				local lava = game.Workspace.LavaArea
+
+				lava:Destroy()
+
+				delLava.BackgroundColor3 = Color3.new(0, 1, 0)
+				wait(0.5)
+				delLava.BackgroundColor3 = Color3.new(0, 170, 255)
+			else
+				delLava.BackgroundColor3 = Color3.new(1, 0, 0)
+				wait(0.5)
+				delLava.BackgroundColor3 = Color3.new(0, 170, 255)
+			end
+		end)
+
+		platform.MouseButton1Click:Connect(function()
+			local buildin = game.Workspace.NewLobby:FindFirstChild("Lobby Building")
+			local BOX = buildin:FindFirstChild("Common Box")
+			local part = BOX:FindFirstChild("Part")
+			local plr = game.Players.LocalPlayer
+
+			part.Name = "Platform"
+
+			part.Position = Vector3.new(-50, -10, 80)
+			part.Size = Vector3.new(250, 1, 250)
+			part.Transparency = 0.5
+		end)
+
+		suicide.MouseButton1Click:Connect(function()
+			plr.Character.Head:Destroy()
+		end)
+
+		deleteWall.MouseButton1Click:Connect(function()
+			if game.Workspace:FindFirstChild("Walls") then
+				deleteWall.BackgroundColor3 = Color3.new(0, 1, 0)
+				game.Workspace.Walls:Destroy()
+				game.Workspace.Ceiling:Destroy()
+				game.Workspace.ExclusiveCeiling:Destroy()
+				wait(0.5)
+				deleteWall.BackgroundColor3 = Color3.new (0, 170, 255)
+			else
+				deleteWall.BackgroundColor3 = Color3.new(1, 0, 0)
+				wait(0.5)
+				deleteWall.BackgroundColor3 = Color3.new(0, 170, 255)
+			end
+		end)
+
+		walkspeedGUI.MouseButton1Click:Connect(function()
+			local closedwalk = false
+			local dragTogglewalk = nil
+			local dragSpeedwalk = 0.01
+			local dragStartwalk = nil
+			local startPoswalk = nil
+			local walkscreenGui = Instance.new("ScreenGui")
+			local walkFrame = Instance.new("Frame")
+			walkscreenGui.ResetOnSpawn = false
+
+			local function updateInput(input)
+				local delta = input.Position - dragStartwalk
+				local position = UDim2.new(startPoswalk.X.Scale, startPoswalk.X.Offset + delta.X,
+					startPoswalk.Y.Scale, startPoswalk.Y.Offset + delta.Y)
+				game:GetService('TweenService'):Create(walkFrame, TweenInfo.new(dragSpeedwalk), {Position = position}):Play()
+			end
+
+			walkFrame.InputBegan:Connect(function(input)
+				if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+					dragTogglewalk = true
+					dragStartwalk = input.Position
+					startPoswalk = walkFrame.Position
+					input.Changed:Connect(function()
+						if input.UserInputState == Enum.UserInputState.End then
+							dragTogglewalk = false
+						end
+					end)
+				end
+			end)
+
+			UIS.InputChanged:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseMovement then
+					if dragTogglewalk then
+						updateInput(input)
+					end
+				end
+			end)
+
+
+			local set = Instance.new("TextButton")
+			local walkTitle = Instance.new("TextLabel")
+			local textBox = Instance.new("TextBox")
+			local uiCorner1walk = Instance.new("UICorner")
+			local uiStroke1walk = Instance.new("UIStroke")
+			uiStroke1walk.ApplyStrokeMode = "Border"
+			local uiCorner2walk = Instance.new("UICorner")
+			local uiStroke2walk = uiStroke1walk:Clone()
+			local uiCorner3walk = Instance.new("UICorner")
+			local uiStroke3walk = uiStroke1walk:Clone()
+			local uiCorner4walk = Instance.new("UICorner")
+			local uiStroke4walk = uiStroke1walk:Clone()
+
+			walkscreenGui.Parent = plr.PlayerGui
+			walkFrame.Parent = walkscreenGui
+			set.Parent = walkFrame
+			walkTitle.Parent = walkFrame
+			textBox.Parent = walkFrame
+			uiCorner1walk.Parent = walkFrame
+			uiStroke1walk.Parent = walkFrame
+			uiCorner2walk.Parent = set
+			uiCorner3walk.Parent = walkTitle
+			uiCorner4walk.Parent = textBox
+			uiStroke2walk.Parent = set
+			uiStroke3walk.Parent = walkTitle
+			uiStroke4walk.Parent = textBox
+
+			walkFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+			walkFrame.Position = UDim2.new(0.71, 0, 0.171, 0)
+			walkFrame.Size = UDim2.new(0, 285, 0, 200)
+			set.BackgroundColor3 = Color3.new(0, 170, 255)
+			set.Position = UDim2.new(0, 0, 0.75, 0)
+			set.Size = UDim2.new(0, 285, 0, 50)
+			set.Font = "FredokaOne"
+			set.Text = "Set"
+			set.TextColor3 = Color3.new(1, 1, 1)
+			set.TextScaled = true
+			walkTitle.BackgroundColor3 = Color3.new(0, 170, 255)
+			walkTitle.Position = UDim2.new(0, 0, 0, 0)
+			walkTitle.Size = UDim2.new(0, 285, 0, 50)
+			walkTitle.Font = "FredokaOne"
+			walkTitle.Text = "Walk Speed"
+			walkTitle.TextColor3 = Color3.new(1, 1, 1)
+			walkTitle.TextScaled = true
+			textBox.BackgroundColor3 = Color3.new(1, 1, 1)
+			textBox.Position = UDim2.new(0, 0, 0.375, 0)
+			textBox.Size = UDim2.new(0, 285, 0, 50)
+			textBox.Font = "FredokaOne"
+			textBox.Text = char.Humanoid.WalkSpeed
+			textBox.TextColor3 = Color3.new(0, 170, 255)
+			textBox.TextStrokeColor3 = Color3.new(0, 0, 0)
+			textBox.TextStrokeTransparency = 0
+			textBox.TextScaled = true
+
+			set.MouseButton1Click:Connect(function()
+				plr.Character.Humanoid.WalkSpeed = (textBox.Text)
+			end)
+		end)
+
+		jumppowerGUI.MouseButton1Click:Connect(function()
+			local closedjump = false
+			local dragTogglejump = nil
+			local dragSpeedjump = 0.01
+			local dragStartjump = nil
+			local startPosjump = nil
+			local jumpscreenGui = Instance.new("ScreenGui")
+			local jumpFrame = Instance.new("Frame")
+			jumpscreenGui.ResetOnSpawn = false
+
+			local function updateInput(input)
+				local delta = input.Position - dragStartjump
+				local position = UDim2.new(startPosjump.X.Scale, startPosjump.X.Offset + delta.X,
+					startPosjump.Y.Scale, startPosjump.Y.Offset + delta.Y)
+				game:GetService('TweenService'):Create(jumpFrame, TweenInfo.new(dragSpeedjump), {Position = position}):Play()
+			end
+
+			jumpFrame.InputBegan:Connect(function(input)
+				if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+					dragTogglejump = true
+					dragStartjump = input.Position
+					startPosjump = jumpFrame.Position
+					input.Changed:Connect(function()
+						if input.UserInputState == Enum.UserInputState.End then
+							dragTogglejump = false
+						end
+					end)
+				end
+			end)
+
+			UIS.InputChanged:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseMovement then
+					if dragTogglejump then
+						updateInput(input)
+					end
+				end
+			end)
+
+
+			local set = Instance.new("TextButton")
+			local jumpTitle = Instance.new("TextLabel")
+			local textBoxjump = Instance.new("TextBox")
+			local uiCorner1jump = Instance.new("UICorner")
+			local uiStroke1jump = Instance.new("UIStroke")
+			uiStroke1jump.ApplyStrokeMode = "Border"
+			local uiCorner2jump = Instance.new("UICorner")
+			local uiStroke2jump = uiStroke1jump:Clone()
+			local uiCorner3jump = Instance.new("UICorner")
+			local uiStroke3jump = uiStroke1jump:Clone()
+			local uiCorner4jump = Instance.new("UICorner")
+			local uiStroke4jump = uiStroke1jump:Clone()
+
+			jumpscreenGui.Parent = plr.PlayerGui
+			jumpFrame.Parent = jumpscreenGui
+			set.Parent = jumpFrame
+			jumpTitle.Parent = jumpFrame
+			textBoxjump.Parent = jumpFrame
+			uiCorner1jump.Parent = jumpFrame
+			uiStroke1jump.Parent = jumpFrame
+			uiCorner2jump.Parent = set
+			uiCorner3jump.Parent = jumpTitle
+			uiCorner4jump.Parent = textBoxjump
+			uiStroke2jump.Parent = set
+			uiStroke3jump.Parent = jumpTitle
+			uiStroke4jump.Parent = textBoxjump
+
+			jumpFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+			jumpFrame.Position = UDim2.new(0.71, 0, 0.171, 0)
+			jumpFrame.Size = UDim2.new(0, 285, 0, 200)
+			set.BackgroundColor3 = Color3.new(0, 170, 255)
+			set.Position = UDim2.new(0, 0, 0.75, 0)
+			set.Size = UDim2.new(0, 285, 0, 50)
+			set.Font = "FredokaOne"
+			set.Text = "Set"
+			set.TextColor3 = Color3.new(1, 1, 1)
+			set.TextScaled = true
+			jumpTitle.BackgroundColor3 = Color3.new(0, 170, 255)
+			jumpTitle.Position = UDim2.new(0, 0, 0, 0)
+			jumpTitle.Size = UDim2.new(0, 285, 0, 50)
+			jumpTitle.Font = "FredokaOne"
+			jumpTitle.Text = "Jump Power"
+			jumpTitle.TextColor3 = Color3.new(1, 1, 1)
+			jumpTitle.TextScaled = true
+			textBoxjump.BackgroundColor3 = Color3.new(1, 1, 1)
+			textBoxjump.Position = UDim2.new(0, 0, 0.375, 0)
+			textBoxjump.Size = UDim2.new(0, 285, 0, 50)
+			textBoxjump.Font = "FredokaOne"
+			textBoxjump.Text = char.Humanoid.JumpPower
+			textBoxjump.TextColor3 = Color3.new(0, 170, 255)
+			textBoxjump.TextStrokeColor3 = Color3.new(0, 0, 0)
+			textBoxjump.TextStrokeTransparency = 0
+			textBoxjump.TextScaled = true
+
+			set.MouseButton1Click:Connect(function()
+				plr.Character.Humanoid.JumpPower = (textBoxjump.Text)
+			end)
+		end)
+	end)
+	
+	qToNoclip.MouseButton1Click:Connect(function()
+		-- Noclip by Alumark on v3rmilion
+		-- Press Q to activate
+		
+		local StealthMode = false -- If game has an anticheat that checks the logs
+
+		local Indicator
+
+		if not StealthMode then
+			local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+			print("NOCLIP: Press ".. bindForNoclipping.Name .." to Activate")
+			Indicator = Instance.new("TextLabel", ScreenGui)
+			Indicator.AnchorPoint = Vector2.new(0, 1)
+			Indicator.Position = UDim2.new(0, 0, 1, 0)
+			Indicator.Size = UDim2.new(0, 200, 0, 50)
+			Indicator.BackgroundTransparency = 1
+			Indicator.TextScaled = true
+			Indicator.TextStrokeTransparency = 0
+			Indicator.TextColor3 = Color3.new(0, 0, 0)
+			Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
+			Indicator.Text = "Noclip: Enabled (Press ".. bindForNoclipping.Name .." To Noclip)"
+		end
+
+		local noclip = true
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+
+		local mouse = player:GetMouse()
+
+		mouse.KeyDown:Connect(function(key)
+			if key == bindForNoclipping then
+				noclip = not noclip
+
+				if not StealthMode then
+					Indicator.Text = "Noclip: " .. (noclip and "Enabled (Press ".. bindForNoclipping.Name .." To Noclip)" or "Disabled (Press ".. bindForNoclipping.Name .." To Noclip)")
+				end
+			end
+		end)
+
+		while true do
+			player = game.Players.LocalPlayer
+			character = player.Character
+
+			if noclip then
+				for _, v in pairs(character:GetDescendants()) do
+					pcall(function()
+						if v:IsA("BasePart") then
+							v.CanCollide = false
+						end
+					end)
+				end
+			end
+
+			game:GetService("RunService").Stepped:wait()
+		end
+	end)
+	
+	kys.MouseButton1Click:Connect(function()
+		char.Head:Destroy()
+	end)
+	
+	setWalk.MouseButton1Click:Connect(function()
+		local newWalkspeed = walktxtbox.Text
+		char.Humanoid.WalkSpeed = newWalkspeed
+	end)
+	
+	setJump.MouseButton1Click:Connect(function()
+		local newJumpPower = jumptxtbox.Text
+		char.Humanoid.JumpPower = newJumpPower
+	end)
+	
+	walkSpeedGuiButton.MouseButton1Click:Connect(function()
+		if walkspeedFrame.Visible == false then
+			walkspeedFrame.Visible = true
+		elseif walkspeedFrame.Visible == true then
+			walkspeedFrame.Visible = false
+		end
+	end)
+	
+	jumpPowerGuiButton.MouseButton1Click:Connect(function()
+		if jumppowerFrame.Visible == false then
+			jumppowerFrame.Visible	 = true
+		elseif jumppowerFrame.Visible == true then
+			jumppowerFrame.Visible = false
+		end
+	end)
+	
+	noclipTool.MouseButton1Click:Connect(function()
+		local tool = Instance.new("HopperBin")
+		local player = game.Players.LocalPlayer
+
+		tool.Name = "NoClip"
+		tool.Parent = player.Backpack
+
+		------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		-- @CloneTrooper1019, 2015
+		------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+		local c = workspace.CurrentCamera
+		local player = game.Players.LocalPlayer
+		local userInput = game:GetService("UserInputService")
+		local rs = game:GetService("RunService")
+		local starterPlayer = game:GetService("StarterPlayer")
+
+		local selected = false
+		local speed = 60
+		local lastUpdate = 0
+
+		function getNextMovement(deltaTime)
+			local nextMove = Vector3.new()
+			-- Left/Right
+			if userInput:IsKeyDown("A") or userInput:IsKeyDown("Left") then
+				nextMove = Vector3.new(-1,0,0)
+			elseif userInput:IsKeyDown("D") or userInput:IsKeyDown("Right") then
+				nextMove = Vector3.new(1,0,0)
+			end
+			-- Forward/Back
+			if userInput:IsKeyDown("W") or userInput:IsKeyDown("Up") then
+				nextMove = nextMove + Vector3.new(0,0,-1)
+			elseif userInput:IsKeyDown("S") or userInput:IsKeyDown("Down") then
+				nextMove = nextMove + Vector3.new(0,0,1)
+			end
+			-- Up/Down
+			if userInput:IsKeyDown("Space") then
+				nextMove = nextMove + Vector3.new(0,1,0)
+			elseif userInput:IsKeyDown("LeftControl") then
+				nextMove = nextMove + Vector3.new(0,-1,0)
+			end
+			return CFrame.new( nextMove * (speed * deltaTime) )
+		end
+
+		function onSelected()
+			local char = player.Character
+			if char then
+				local humanoid = char:WaitForChild("Humanoid")
+				local root = char:WaitForChild("HumanoidRootPart")
+				currentPos = root.Position
+				selected = true
+				root.Anchored = true
+				lastUpdate = tick()
+				humanoid.PlatformStand = true
+				while selected do
+					wait()
+					local delta = tick()-lastUpdate
+					local look = (c.Focus.p-c.CoordinateFrame.p).unit
+					local move = getNextMovement(delta)
+					local pos = root.Position
+					root.CFrame = CFrame.new(pos,pos+look) * move
+					lastUpdate = tick()
+				end
+				root.Anchored = false
+				root.Velocity = Vector3.new()
+				humanoid.PlatformStand = false
+			end
+		end
+
+		function onDeselected()
+			selected = false
+		end
+
+		tool.Selected:connect(onSelected)
+		tool.Deselected:connect(onDeselected)
+	end)
+	
+	GuiToggleBindButton.MouseButton1Click:Connect(function()
+		GuiToggleBindButton.Text = "PRESS ANY KEY"
+		GuiToggleBindButton.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+		local db = true
+		UIS.InputBegan:Connect(function(Input)
+			if db == true then
+				db = false
+			else
+				return
+			end
+			GuiToggleBindButton.Text = "CHANGED TO ".. Input.KeyCode.Name .." SUCCESSFULLY"
+			wait(1)
+			GuiToggleBindButton.Text = "Toggle GUI"
+			GuiToggleBindButton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+			keybindOpenClose = Input.KeyCode
+		end)
+	end)
+	
+	bindsX.MouseButton1Click:Connect(function()
+		bindsFrame.Visible = false
+	end)
+	
+	qnoclipbindbutton.MouseButton1Click:Connect(function()
+		qnoclipbindbutton.Text = "PRESS ANY KEY"
+		qnoclipbindbutton.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+		local db = true
+		UIS.InputBegan:Connect(function(Input)
+			if db == true then
+				db = false
+			else
+				return
+			end
+			qnoclipbindbutton.Text = "CHANGED TO ".. Input.KeyCode.Name .." SUCCESSFULLY"
+			wait(1)
+			qnoclipbindbutton.Text = "Toggle GUI"
+			qnoclipbindbutton.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+			bindForNoclipping = Input.KeyCode
+			qToNoclip.Text = "Press "..bindForNoclipping.Name.." to noclip"
+		end)
+	end)
+	
+	localBtools.MouseButton1Click:Connect(function()
+		local tool1 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+		local tool2 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+		local tool3 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+		local tool4 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+		local tool5 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+		tool1.BinType = "Clone"
+		tool2.BinType = "GameTool"
+		tool3.BinType = "Hammer"
+		tool4.BinType = "Script"
+		tool5.BinType = "Grab"
+	end)
+	
+	localDelButton.MouseButton1Click:Connect(function()
+		local player = game.Players.LocalPlayer local mouse = player:GetMouse()
+		local player = game.Players.LocalPlayer
+		local mouse = player:GetMouse()
+
+
+		local ScreenGui = Instance.new("ScreenGui")
+		local TextButton = Instance.new("TextButton")
+		local On = Instance.new("StringValue")
+
+
+
+		ScreenGui.Parent = player.PlayerGui
+		ScreenGui.ResetOnSpawn = false
+		TextButton.Parent = ScreenGui
+		TextButton.BackgroundColor3 = Color3.new(0.784314, 0.784314, 0.784314)
+		TextButton.BorderSizePixel = 0
+		TextButton.Position = UDim2.new(0, 0, 0.455743879, 0)
+		TextButton.Size = UDim2.new(0, 186, 0, 35)
+		TextButton.Font = Enum.Font.SourceSans
+		TextButton.Text = "Delete (Off)"
+		TextButton.TextColor3 = Color3.new(0.27451, 0.27451, 0.27451)
+		TextButton.TextScaled = true
+		TextButton.TextSize = 14
+		TextButton.TextWrapped = true
+
+
+		On.Parent = TextButton
+		On.Value = "Off"
+
+
+		TextButton.MouseButton1Up:Connect(function()
+			if On.Value == "Off" then
+				On.Value = "On"
+				TextButton.Text = "Delete (On)"
+			else
+				On.Value = "Off"
+				TextButton.Text = "Delete (Off)"
+			end
+		end)
+
+		mouse.Button1Up:Connect(function()
+			if On.Value == "Off" then
+				print('btools off')
+			else
+				if mouse.Target.Locked == true then
+					mouse.Target:Destroy()
+				else
+					mouse.Target:Destroy()
+				end
+			end
+		end)
+	end)
+	
+	animationsHub.MouseButton1Click:Connect(function()
+		-- funny animation
+
+		_, Protected_by_MoonSecV2, Discord = 'discord.gg/gQEH2uZxUk'
+
+
+		,nil,nil;(function() _msec=(function(e,o,l)local W=o["ئدقئڝئكزآئڝڪڪ"];local H=l[e[(0xa8ac/68)]][e["كئسآقن؃ز؃ڪدز؃س"]];local i=(68-0x40)/(59+((-228000/0x28)/100))local x=(0x52-(0x16d0/(209-0x88)))-(118-0x75)local p=l[e[(-113+0x11e)]][e["ؠن؃ڪئكئټزآآنسڝحنئ"]];local v=(28-((0x38a-501)/0xf))+(0x3e/31)local A=l[e[(531+-0x10)]][e["ح؃كټد؃دجس"]]local n=(0x188/196)-((-107+(23749/0x7f))-79)local _=((((36178-0x46c6)/129)+-0x77)-0x13)local w=((181-((18865-0x24ff)/0x3d))+-0x19)local O=(20+(-0x65+(0xd4b/(190-0x95))))local b=(0x4d-((2996400/(0x23a-(719-0x178)))/0xb0))local k=((0x24e0/((0x174+-18)/0x3))+-78)local h=(230/((-0x1e-(-0x26+63))+170))local J=((((58-0x53)+-34)+0x7c)-0x3d)local B=(27+((11880/(426-0xe4))-0x53))local g=((155-((0x5db9+-53)/210))-0x25)local S=(0x86-(((63586-0x7c6a)-15876)/122))local L=(0x7b-((0x1ccd+(-0x5c+(0x5e+-116)))/61))local N=(432/(-0x6a+(-103+(703-0x182))))local c=((((0x4249a5+(0x11-46))/203)/200)+-0x68)local u=(0x18c/(0xcc+(-10+(-0x28-22))))local f=(0x53+((-52+(-55+-0x48b5))/234))local D=(30+(-0x10e0/(20480/(0x1400/40))))local U=((0x292-(-42+(0xcac8/126)))/96)local M=(-0x47+(0x41e8/(0x2814/(6345/0x8d))))local V=e[(-0x53+1472)];local K=l[e[((0x7414/68)-264)]][e["قنآندجآحټئآن"]];local Q=l[(function(e)return type(e):sub(1,1)..'\101\116'end)('آڝسندڪڝئ')..'\109\101'..('\116\97'or'قسجندجحس')..e[(19055/0x25)]];local t=l[e[(585+-0x46)]][e["زڪكزؠنؠڪئؠحضحټزدد"]];local j=(0x2c/22)-((0x216-(0x3c90/51))/115)local s=(434/(0x1d5-(0x26d-369)))-(0x55-83)local Y=l[e[(-33+0xce)]][e["كڝزڪآكقټڪسئجكؠآكح"]];local o=function(e,l)return e..l end local m=(52+-0x30)*((0xe3d/(-41+0x56))-0x4d)local G=l[e["آقڝجآقضڪڝڪڪحئټض؃آآټ"]];local r=(50/0x19)*(0x5700/(5220/(0x6a-76)))local y=(2098-0x432)*(0x4e-(157+(-0x51+0)))local R=(((-0x193c/85)/0x2)+0x5a)local C=(-70+((-58+0xd4)+-82))*(0x14-18)local P=l[e["ؠددككئكؠ؃"]]or l[e[(0x14bef/165)]][e["ؠددككئكؠ؃"]];local a=(-110+(1464/(25-(111-0x5a))))local e=l[e["؃؃ححآڝئ؃حآټك؃آؠټحڪد"]];local A=(function(a)local r,o=2,0x10 local l={j={},v={}}local d=-n local e=o+x while true do l[a:sub(e,(function()e=r+e return e-x end)())]=(function()d=d+n return d end)()if d==(m-n)then d=""o=j break end end local d=#a while e<d+x do l.v[o]=a:sub(e,(function()e=r+e return e-x end)())o=o+n if o%i==j then o=s t(l.j,(Y((l[l.v[s]]*m)+l[l.v[n]])))end end return A(l.j)end)("..:::MoonSec::..؃دحجئضسزقكنؠآټڪڝؠققڪسنئسححڝڪټنؠسندسڪئنحسزحڪؠؠنكسزحكضزنضضدټڝ؃آڝقحزضجقدضڪزنڪزڝككضڪجح؃ڪڪندحڪزآنقكزئئؠڝ؃ڝ؃دجقحضڪجندسڝحآڪڪقآسؠزئقدنڝسټح؃ڝڪئنقزټضڪجد؃دآنندسآؠضحئڝڪټنؠسڝدؠضؠنحآ؃حټڪؠنزآ؃ټكڝؠقئآحدآدنئزسضححڪضؠجآڝجكسسسجدڝجنئضآدآئققضضنجسدححؠحكڝؠآكزحسحئجضڝآڪننقسسحجڪكنجڪدحڪققڪسسئحدڪضسحح؃؃آنڝضئنححڝڪټن؃حټڪؠقكضكسد؃ټڪؠنكسنكنضزنئ؃دنڪسؠزسكسسجسڝآټسنټقئ؃ئززجح؃ڪڪنحټڪئقڝجسڪئضسڝسندقټحكڪسكححڪټسققجقنجقججنڪجض؃جڪټقككڝآنكككئدآكزڪئئټڝضنزز؃ئټنؠسكحسحققضحضججز؃كضززآئڪحن؃سدڪ؃ڪڪڝن؃قئسججكڝڪآنكڪكقضسجح؃ڪڝآڝزنحزڪضنئ؃دحڪڪآنآسكقضڪجندسڝحآڪؠكقسزئجڪدنڝقټحؠ؃قنسسئحج؃ڝنټسؠضقڪزدئسححڝڪڪآؠسكحزحئنجئ؃حټڪؠننقزحئڪحڝ؃سڪضؠڪكنزسضححڪ؃نڪقآحنجزنضقجح؃ڪڪنآسنحزڪضآجسدئڪڪڪننسقحضڪجندسڝحآڝنننسسحجڪدنڝسټحنڪكضسسئحدڪڝنټسؠحك؃سنئقحح؃ئټنؠسكحسڪسزحس؃جټڪؠنكسزسزؠحن؃سڪحټؠكنززضحئ؃جؠڪسآحكڪزڝضسجح؃ڪ؃نآڝنحزڪضنجسدحڝنآننآآآضڪجندس؃ئآڪنؠقسسحجڪدڪحجټحنڪقنزقئحدڝڝنټنټڝقڪسنئسججڝڪټؠؠسنئكڝئنحس؃حڪحؠنكسزحس؃زج؃سڪجؠڪنئزسضححڪحنڪسآحكڝزنضزجحدسڪنټقنحزڪضټجسدئڪڪآننسكئضڪجندنڝحټؠننقسسحض؃دنڝسټزنڪك؃سسئحدڪ؃آټسؠحكئسنئڝححڝڪټنؠسكحسڪئټحس؃قټڪؠآكسزحئڪحن؃زڪحآدكنزسضححڪ؃نڪسآحكڪزنضسجج؃ڪڪڪآسنحزڪضنجسدحڪڝآننسقئضڪجندسڝجآڪننقسسحجڪدنڝسټحنڪقنسسئحدڝڝنټسؠحقڪسآئسححڝڪټؠؠسكحسڪئنحز؃حټڪؠنكسزحئڪحن؃سڪحؠڪكنزټضححڪ؃نڪسدجكڪزنضسجج؃ڪڪنآسنحزڪضنجسدحڪڪآننسقحضڪجندسڝحآڪننقسسحجڪدنڝسټحنڪقنسكئحدڪڝنټسؠحقڪسنئسححڝڪټنؠسكحسڪئنحس؃حڪ؃ؠنكسزحئڪحن؃سڪحؠڪكؠزسضححڪ؃نڪقآحكڪزنجحجز؃ڪڪنآس؃زآآكآزكئؠضؠآننسقحضڪجندسڝحآڪآققسسحجڪحآدزټحؠ؃قنسقئحدڪڝنڪقټجقڪسټئسحئڝڪټنؠسنئكڝئنحن؃حټڝؠنكسزحضئضك؃سڪزؠڪكنزسضجحڪ؃ڪڪسآحنټزنضسجحد؃ڪنآسنحزڪسكجسدحڪڪآننسقحضڪجنحضڝحآڪننقكسحجڪدنڝسڪدنڪقنسسئجدڪڝنټسؠحڪسسنئنحح؃؃ټنؠزكحزئسححس؃حټڪآسكسزجئڪحؠ؃سڪسڪؠكنزسضحجن؃نڪزآحنحنزضسجح؃ڪ؃ئآسنجزڪس؃سندحڪڪآنآ؃قحضڝجندزڝحټحټزقسسحجڪجئڝسټجنڪك؃زڪئحدڝڝنڪزؠحقڝسنئسحح؃ح؃زؠسكحسڪضؠحس؃جټڪؠڪآجزحئڪحنح؃ڪحؠڝكنزسنسحڪ؃ڪڪسآئكڪزټضسجحسحڪنآؠنحقدضنجقدحڝئڝڪنسقسضڪضئدسڝجآڪنڝقسسسسؠدنڝسټحآققنسزئحدڪئڪټسؠسقڪسآئسحضڝڪټن؃نكحزجئنحك؃حڪ؃ؠنكآنسئڪحڪ؃سڝآؠڪكؠزسضزحڪ؃ڪدجآحكڪزنز؃جح؃ڝڪنآنآڝزڪضنجسحټڪڪآؠنسقحؠزجندنڝحآڪننقسسحجڪئ؃ڝسټسنڪقؠسسئحدڪڝنححؠحكحسنئقححڝڪټنؠسكئسڪئنحس؃جټڪؠنكسزئئڝحن؃سڪحؠڪكنزسضحجح؃نڪسآحضڝقسضسجح؃ڪئقحئڪحآدقسضآجز؃آڪحؠسقضئنآضدؠڝحآڪننټڝؠحقدسسحنحزؠنقنسسئحزنئنحؠڪآآنكؠزحئض؃ئڪجؠؠقآنقضئحس؃حټڪدقڝئؠڝققسججق؃ڪڪحؠدزسسجحڪ؃نڪسټئآڝزنضسجحدحڪنآسنحقئؠئجسدحڪڪټزنسقجضڪجؠدسڝسڝؠننقسسحئؠدنڝزټحآ؃ؠؠسسئحدڪڝؠټسؠحقڪز؃ك؃ححڝڪټنؠټكحسڝئنحس؃حڪحڪزكسزحئڪجد؃سڪجؠڪكڪنجضححڪ؃نڝجآحكڝزنسقسج؃ڪڪنآسنضزڪضنجسدقجقآننسقحسكجندزڝحآڪننقنقڝجڪدنڝسټټنڪقؠسسئسئؠڝنټسؠحكؠسنئزححد؃؃ؠؠسكحسڪئآحس؃حټڪټنكڝزحئڪحن؃سڪحآدكنزسككحڪ؃ؠڪسآجكڪزنضسجحسضڪنآسنحق؃ضنجقدحڪڪد؃نسقحضڪجندسڝحآڪننققسحجڪدنڝزټحنڪقنسسئجدڪڝنټسؠسكجسنئسححسجحقڝقټضنزضححس؃حټڪؠنؠآزحئڝحن؃سڪحؠڪكنقققجحڪ؃آڪسآجكڪزنضسجقجټڪنآكنحزڪضنجزدحڝ؃آننسكدضڪجندسڝجآڪننقسسحئټدنڝسټحنڪقنسسئحدڪضحټسؠئقڪسآئسحجڝڪټن؃حكحسڝئنحق؃حټڪؠنكسزئئڪحن؃سڪجؠڪكنزسضجحڪ؃نڪسآحكڝزنضسجحككڪڝآسنحزڪؠڝكجضآجج؃ؠننقحضڪجنحقحجآڪننقسسججڪدنڝسټحڝضقنسزئحدڪڝنټسؠحقڪآحئسححڝڪټآؠسكجسڪئنحق؃حټڪؠنكززحئڪحن؃سڪحؠڪكنزسضنحڪ؃نڪسڝآننزنضسجحسآئڝدڪآټك؃كحئز؃ئټټټؠنڪسآجنجڪدسڝحآڪ؃دڪنؠززنجكڝكټحنڪقنآڪنحسدكټټسؠحقڪسنئسححسڪدنټئكحسڪئنحسټؠټڪؠنكسزحئڪحنڝسحدڝقكڪزسضححڪسحجك؃ئڪزككضآجح؃ڪڪنحڪ؃دټدكنزدجآد؃آننسقحز؃سؠدسڝضآڪنؠقسسحجڪدنحئټحؠدقنسكئحدڝڝنټآ؃آقڪسټئسحزڝڪټؠؠسكجسڪئڪضج؃حټڪؠنكؠزحئڝحن؃ن؃ڝؠڪكنزسضنحڪ؃ؠڪسټئآڝزنضكجح؃ڝڪنآسنحزڪققجسدضڪڪآټنسقجضڪجنسحڝحټدننققسحجڪدن؃قڝجنڪقټسسئقدڪڝنټسآئنټسنئنحح؃جټنؠسكحق؃ئنحس؃زټڪآ؃كسزحئڪحن؃سڪحآئكنزسضححڪ؃نڝقآحكڪقدضسجق؃ڪڪنآسنسزڪضنجؠدح؃آآننزقحضڪسټدسڝؠآڪنڪقسسحجڪحآئؠټحؠققنسڪئحدڪڝنڝسؠحقڪزئئسحآڝڪڪدؠسؠحسڪئنجد؃حټڪؠنككزحئڪحن؃سڪڝؠڪنحزسضححڪ؃نڪسآحنآزنضڪجح؃ڪڪنآسنحزڪسضجسح؃ڪڪآآنسنحضڪجنحدڝحټكننققسحجڪدنڝسټټنڪقآسسئئدڪڝنټسؠحككسنضدحح؃دټنټسكحسڪضضحس؃ټټڪؠڪكسزحئڪحند؃ڪحآ؃كنزقضححڪ؃نڪسآسكڪقجضسجآ؃ڪڪنآسنحقزضنجكدحڝ؃آنآسقحضڪجټدسڝؠآڪنڪقسسسضددنڝؠټحؠآقنسزئحج؃حؠټسؠزقڪسؠئسححڝڪټنڪڝكحزجئنحز؃حڪحؠنكسؠڪئڪحڪ؃سڪئؠڪكنزسضحج؃؃نڪسآحكڝزنضسجحددد؃آسنحزڪجضجزدحڪڪآن؃زؠكضڪجندسڝحآڪننؠ؃نحڪئدټڝسټحنڪڪجآسك؃دحڝنټسؠحقڪسنئسحنجڪكؠؠنكحسڪئنكحئڪحق؃ض؃سزكئڪحن؃سدڝدټڪڝؠټسسضسجززدآقكڪزنضسكنسټجټ؃سټټنقكئجآدحڪڪآننڝدئزقززنضك؃ححؠ؃قسسحجڪزآجټڝدكؠئڪدسجقدڝڝنټسؠحڝڪسؠئسححڝڪټنؠسكحآئقن؃ح؃قټڪؠنكسزڪ؃ننڪڪزئنئككڪزڪضححڪ؃نجح؃زڪننككئسؠد؃د؃ڪحنحزڪضنجسدحسڪ؃ڪڪسئجسضجندسڝححنڝنټؠكڝز؃ئؠحض؃آؠجقنسسئحقزئسدكڝضآ؃سدئنححڝڪټندحټڪؠآقسكس؃قټڪؠنكسزحڝدؠټڪج؃ئڝآحضقحضححڪ؃نئئحزڝسنضسقسندڝټآؠضؠجقسئئضئدسڪڪآننسڪجكضضن؃ټآڪټقننقسسحكڝزئجق؃ټڪڪآدكدضنجدڝآسدؠزقڪسنئسقزئآدآڝكآؠقټضئحس؃حټڪ؃ڪڪ؃آسقنضنجڪ؃ټټحنئقحقؠؠك؃نڪسآح؃ضآقزڝجحڪآسندسآټؠآزضجسڪڪضڝئڝ؃قآنزضجكټټنزضآ؃ضآكزدجئڪننزئڝ؃ڝآآجټحكڪآنددنڪسآڝقحجحڪآنؠضڝدسقكئدڝڪؠقسندټ؃سقټزقحآؠحسڪضجټنؠټزئڝنؠئسآحح؃قؠڝئسڝڝڪضسڝضح؃ټآئئؠج؃ؠزكڪح؃دنآ؃قټڝآڪسكآضس؃ټكضزكجئڪسكڝضضڪحكدزآ؃سڪكن؃حؠڪحآضئڝ؃دڪؠسڝضزټڝكقزؠجزؠڪسڝحؠ؃ڪكقئآ؃ؠؠڪزجضټڪجكڪئؠئقڝ؃نسحنټټكڝئؠ؃زڝ؃نجسآحئآآك؃جنڝجننقحڝجآننسقحآسكضضقئ؃؃كجضكؠسحجڪدنئڝحس؃حآئنحززجؠټزڪحؠئئڪضقدئټننڝسؠق؃جزحزټسؠڪدڪټڪؠنكسزحئڪننئكححئقكؠزسضححڪسكجنآسكڪزنضسكجحڪنټححس؃زڪضنجسدحڪڪئنڪقآحجنئ؃دسڝحآڪزؠټڪسقكن؃ئقؠقڝڪقك؃سسئحدڪآسآڪزټنئح؃نكحض؃ئټنؠسكحټسقڪئسڪؠنؠس؃ضززقئڪحن؃سآ؃جئكڪج؃ڝزجكئئڝآآحكڪزنكؠقڝضڪجضڝقآقنؠسڪجڝآټڝسؠنكزضټڪزڪسټننآزټجئدقڪقدندڪڝسټحنڪڝجؠحكسس؃ئڪټنؠحقڪسننقزآئئحئحڝكحسڪئنحقحټټڪؠنكسزئئڪحن؃سڝئڪقكنزسضحئض؃نڪسآحكڪزنضسجح؃ڪڪنآسنحزڪضنجسدحڪڝآننسقحضڪجنحقڝحآڪنؠقسزضجڪدنڝسڪئنڪقنسزئحجنڝنټسؠحؠئسنئسحجڝڪڪجؠسكجسڪسئحس؃س؃ؠؠنكسزحضزحن؃زڪحآحآززسضححڪدئڪسآجكڪزنضقجح؃ڪڪنآزنحزڪضنجقجټڪڪآؠنسقزضڪجندس؃ئڝحننقزسحئؠدنڝسټحنڪؠ؃سسئجدڪڝنټسؠحقڪزآسزحح؃؃ټنټنكحسڪئنحقحټټڪؠټكسزضئڪحن؃سڪحآڝكنزنضححڝ؃نڪسآحكڪزنضسجز؃ڪڪټآسنحزڪسآجسدحڝئآنؠؠقحضڪجندسڝحآڪنڝقسسئجڪدآڝسټقنڪقنسنئحزنڝنټزؠحكجسنئنئڝڝڪټنؠسڪڪسڪئؠحس؃حددؠنكؠزحضدحن؃سڪحټ؃ټ؃زسضقحڪدنڪسآحكڪقآضسجحدضڪنټجنحزڪضنئقدحڪڪټحنسقؠضڪجندس؃ئآڪننقڝسحضټدنڝسټحآ؃قنسسئآدڪدضټسؠحقڪسنئسحح؃ضټنآ؃كحز؃ئنحس؃حټڪآ؃كسزقئڪجد؃سڪحؠڪكنزؠضحج؃؃نڪقآحنئزنضسجس؃ڪئسآسنجزڪضڝجسدسدؠآننسقحؠنجندزڝحآڪټټقسسزجڪدټڝسټحنڪكآكآئححئڝنڪسؠحقڪسنضقححڝڪڪدؠسكڝسڪئنحسدئټڪؠنكڪزحز؃حن؃سڪحټ؃كنزسضؠحڪدآڪسآحكڪقآضسجحدقڪنټئنحزڪضنجسدحڪڪټدنسقآضڪجآدسڝحآڪننقآسحئئدنڝټټحنڪقنسسئزدڪڝآټسؠئقڪز؃ئسحح؃حټندحكحسڝئنحؠ؃حڪحڪزكسزحئڪقس؃سڪجؠڪكننكضحجج؃نڪكآحكڪزنضقضټ؃ڪڝ؃آسنجزڪضنجسدحئضآننؠقحس؃جندقڝحټئڝئقسسزجڪزضڝسټجنڪقنسسئسئؠڝنټسؠحڪكسنئزححڝڪ؃ټؠسكزسڪئټحس؃حټڪآآكسزحضئحن؃ټڪحؠڪكنققضححڪددڪسآضكڪزنضسئئ؃ڪڪنآڪنحققضنجسدحڪڪآننسقكضڪئددسڝنآڪؠ؃قسسحئضدنجحټحنڝقنسزئححححزټسؠحقڪنسئسحجڝڪڪآڪزكحزضئنجج؃حټڪؠننقكجئڪجح؃سڝسؠڪكنزسسئئڝ؃نڪڝآحؠڝزنضسجحح؃؃ؠآسنآزڪسقجسدحڪڪآننټقحسضجنح؃ڝحټ؃ننقسك؃جڪح؃ڝسټقنڪكدسسئقسقڝنټآؠحآڪسنئزححڝڪټنؠنؠڝسڪئنحسئحټڪؠؠكسزسزؠحن؃سڪحڝڝكنززضحئ؃جؠڪسآقكڪقكضسجح؃ڪڪندټنحقجضنجقدحڝ؃آننآآټضڪجڪدسئڪآڪنؠقسسزجڪدڪحجټحنڪقنآحئحدڝڝنټسڪضقڪسڝئسحضڝڪټنؠسنئنئئنحآ؃حڪضؠنكسزحس؃حن؃سڪكؠڪنززسضححڪدآڪسآحنسزنزآجح؃ڪڪنټقنحزڪسججسدڪڪڪآننسكئضڪجنح؃ڝحټ؃ننقسسحجڪدنڝسټكنڪكئسسئئدڪڝنټسؠحكئسنئآحح؃ضټنؠسكحسڪئڝحس؃ئټڪؠآكسزقئڪحن؃نڪحدنكنززضحجج؃نڪنڪڝكڪزنضسقڪ؃ڪڪؠآسنحؠدضنجؠدحڝدآننسقحز؃ضددسڝقآڪؠدقسسحجڪحآڝسټحؠضقنزجئحدڪڝنڪقؠحقڪزحئسجڝڝڪټنؠسنئسڪئنحڝ؃حڪسؠنكسزحس؃حن؃سڪآؠڪنضزسضححڪ؃نڪسآحنضزنس؃جحد؃ڪنآسنحزڪس؃جسدقڪڪټدنسقحضڪجندؠڝحټ؃ننققسحجڪدنڝسټسنڪقڝسسئحدڪڝڪټسؠحقڪسننحححڝڝټنؠسڪؠسڪئڪحس؃حټڪؠنكسزحزئحن؃نڪحؠڝكنزسضحجئضئڪسآسكڪڪ؃ضسجج؃ڪڪنآسنسنؠضنجسدحضئآننزقحقڪئ؃دسڝزآڪنڪقسقحجڪحآدنټحؠجقنسزئحدڪڝنټسؠئقڪسنئسحجڝڪټنؠسنئكڝئنحؠ؃حڝئؠنكسزحضئضك؃سڪقؠڪكڪزسضجحڪ؃ؠڪسآحنټزنضسجحد؃ڪنآسنحزڪؠحجسدزڪڪآآنسقجضڪجڪئجڝحآڪننڪزسحجڝدن؃ق؃جنڪقڝسسسزدڪڝنټسټحكزسنئؠحح؃جټنآڝكحز؃زضحس؃قټڪؠنكسزحئڪحندقڪحآجكنزقضححڝ؃نڝقآحكڪزڝضسجز؃ڪڪنآسؠئزڪضنجآدحڝحآننسقحضڪجندسڝزآڪنآقسسججڪحآڝسټحؠجقنزؠئحدڪڝنڪقؠحقڪز؃ئسججڝڪټنؠسؠحسڪئنحآ؃حڪئؠنكآزحس؃حن؃سڪنؠڪنززسضححڪدآڪسآحنززنسڪجح؃ڪڪنټقنحزڪسئجسجضڪڪآننسكئزڝجنحدڝحڪآننقسسحجڪضټڝسټننڪكضسسئئدڪڝنټسؠحكئسنئڪححڝڪټنؠسكحسڪئڝحس؃حټڪؠآكسزحئڪحن؃ؠڪحؠڝكنززضححڪ؃نڪسآحكڪزؠضسجح؃ڪڪن");local t=(0x1104/(-109+0xe6))local l=78 local d=n;local e={}e={[(0x78-119)]=function()local x,n,o,e=p(A,d,d+v);d=d+C;l=(l+(t*C))%a;return(((e+l-(t)+r*(C*i))%r)*((i*y)^i))+(((o+l-(t*i)+r*(i^v))%a)*(r*a))+(((n+l-(t*v)+y)%a)*r)+((x+l-(t*C)+y)%a);end,[(0x4c-74)]=function(e,e,e)local e=p(A,d,d);d=d+x;l=(l+(t))%a;return((e+l-(t)+y)%r);end,[(-93+0x60)]=function()local e,o=p(A,d,d+i);l=(l+(t*i))%a;d=d+i;return(((o+l-(t)+r*(i*C))%r)*a)+((e+l-(t*i)+a*(i^v))%r);end,[(132-0x80)]=function(o,e,l)if l then local e=(o/i^(e-n))%i^((l-x)-(e-n)+x);return e-e%n;else local e=i^(e-x);return(o%(e+e)>=e)and n or s;end;end,[(960/0xc0)]=function()local l=e[(-0x42+67)]();local o=e[((183-0x7d)-57)]();local c=n;local d=(e[(-0x61+101)](o,x,m+C)*(i^(m*i)))+l;local l=e[(-0x49+77)](o,21,31);local e=((-n)^e[(0x3e4/249)](o,32));if(l==s)then if(d==j)then return e*s;else l=x;c=j;end;elseif(l==(r*(i^v))-x)then return(d==s)and(e*(x/j))or(e*(s/j));end;return H(e,l-((a*(C))-n))*(c+(d/(i^R)));end,[(924/0x9a)]=function(o,i,i)local i;if(not o)then o=e[(53-0x34)]();if(o==s)then return'';end;end;i=K(A,d,d+o-n);d=d+o;local e=''for o=x,#i do e=V(e,Y((p(K(i,o,o))+l)%a))l=(l+t)%r end return e;end}local function K(...)return{...},G('#',...)end local function A()local c={};local d={};local l={};local b={c,d,nil,l};local o={}local w=(0x726/183)local a={[(0x22/17)]=(function(l)return not(#l==e[(0x1a-24)]())end),[(-0x1b+28)]=(function(l)return e[(28-0x17)]()end),[(-0x50+83)]=(function(l)return e[((210-0x85)-71)]()end),[(0x28/10)]=(function(l)local d=e[(67-0x3d)]()local e=''local l=1 for o=1,#d do l=(l+w)%a e=V(e,Y((p(d:sub(o,o))+l)%r))end return e end)};for e=x,e[(191/0xbf)]()do d[e-x]=A();end;local l=e[((7328/0x20)/0xe5)]()for l=1,l do local e=e[(31-0x1d)]();local d;local e=a[e%(0x6c0/64)];o[l]=e and e({});end;for a=1,e[(86-0x55)]()do local l=e[(460/0xe6)]();if(e[(0x63+(-0x34b2/142))](l,n,x)==j)then local b=e[((17856/0x90)/0x1f)](l,i,v);local d=e[((0x84-81)-47)](l,C,i+C);local l={e[(0x4b-(-68+0x8c))](),e[(-92+0x5f)](),nil,nil};local r={[(0x10-(0xc50/197))]=function()l[u]=e[((0xf7-134)-110)]();l[B]=e[(-0x63+102)]();end,[(105+(-0x9b+51))]=function()l[u]=e[(0x90/144)]();end,[(-84+0x56)]=function()l[f]=e[(29-0x1c)]()-(i^m)end,[(510/0xaa)]=function()l[M]=e[(-63+0x40)]()-(i^m)l[B]=e[(0x5b+-88)]();end};r[b]();if(e[(512/0x80)](d,x,n)==x)then l[O]=o[l[h]]end if(e[(70+-0x42)](d,i,i)==n)then l[M]=o[l[f]]end if(e[(760/0xbe)](d,v,v)==x)then l[B]=o[l[B]]end c[a]=l;end end;b[3]=e[(54-0x34)]();return b;end;local function j(e,s,t)local l=e[i];local r=e[v];local e=e[n];return(function(...)local y={...};local A=G('#',...)-x;local d={};local m={};local a=e;local v=l;local l=n;local e=n e*=-1 local C=e;local Y={};local r=r;local p=K for e=0,A do if(e>=r)then Y[e-r]=y[e+x];else d[e]=y[e+n];end;end;local e=A-r+n local e;local r;while true do e=a[l];r=e[(0x46-69)];o=(11263434)while r<=(186-0x8d)do o-= o o=(11910063)while r<=(0x1054/190)do o-= o o=(1364688)while r<=(830/0x53)do o-= o o=(5981892)while(51-0x2f)>=r do o-= o o=(203553)while r<=(-114+0x73)do o-= o o=(1228004)while(-0x2d+45)<r do o-= o local e=e[w]d[e](P(d,e+x,C))break end while 523==(o)/((0x8e2a0/248))do local o;local r;d[e[h]]=t[e[u]];l=l+n;e=a[l];d[e[h]]=e[M];l=l+n;e=a[l];d[e[O]]=e[f];l=l+n;e=a[l];r=e[u];o=d[r]for e=r+1,e[B]do o=o..d[e];end;d[e[k]]=o;l=l+n;e=a[l];if not d[e[_]]then l=l+x;else l=e[c];end;break end;break;end while(o)/((6494-0xcbf))==63 do o=(869320)while r<=(0x47-69)do o-= o do return end;break;end while(o)/((123600/0x96))==1055 do o=(3348938)while(0x32-47)<r do o-= o d[e[O]]=d[e[D]][e[B]];break end while 1081==(o)/((343878/0x6f))do local e={d,e};e[x][e[i][w]]=e[n][e[i][B]]+e[x][e[i][c]];break end;break;end break;end break;end while 2982==(o)/((-0x70+2118))do o=(1292928)while r<=(-82+0x59)do o-= o o=(2278905)while r<=(72-0x43)do o-= o local r;local o;d[e[O]]=t[e[u]];l=l+n;e=a[l];d[e[b]]=t[e[f]];l=l+n;e=a[l];d[e[w]]=e[M];l=l+n;e=a[l];d[e[h]]=e[c];l=l+n;e=a[l];d[e[k]]=e[D];l=l+n;e=a[l];o=e[b]d[o]=d[o](P(d,o+n,e[c]))l=l+n;e=a[l];d[e[_]]=d[e[D]][d[e[g]]];l=l+n;e=a[l];o=e[w]d[o]=d[o](d[o+x])l=l+n;e=a[l];r=d[e[S]];if not r then l=l+x;else d[e[h]]=r;l=e[c];end;break;end while 2085==(o)/(((0x1201-2322)-0x4aa))do o=(11425)while r>(0x21+-27)do o-= o local l=e[b]d[l]=d[l](P(d,l+n,e[M]))break end while 25==(o)/((0x13a3/11))do local e={d,e};e[n][e[i][b]]=e[i][B]+e[i][c];break end;break;end break;end while 481==(o)/((5472-0xae0))do o=(3747888)while r<=((0x75/3)-31)do o-= o if not d[e[O]]then l=l+x;else l=e[u];end;break;end while 3062==(o)/((-112+0x538))do o=(4500069)while((12551/0xa3)-0x44)<r do o-= o d[e[w]]=d[e[M]]%e[S];break end while 2947==(o)/((0x11859/47))do d[e[h]]=d[e[D]][e[N]];break end;break;end break;end break;end break;end while 1404==(o)/(((4120-0x83e)-1038))do o=(5084580)while r<=((305-0xc2)-95)do o-= o o=(2265720)while(637/0x31)>=r do o-= o o=(212245)while r<=(0x98a/222)do o-= o d[e[b]]=(e[f]~=0);l=l+x;break;end while 935==(o)/((248+-0x15))do o=(5621319)while r>(0x86+-122)do o-= o local e=e[k]d[e](P(d,e+x,C))break end while 2673==(o)/((0x423b7/129))do d[e[O]]=(e[M]~=0);break end;break;end break;end while 948==(o)/(((0x8ec38/120)-2483))do o=(3410420)while(0x78c/138)>=r do o-= o d[e[w]]={};break;end while 4036==(o)/(((-37+0x6dd)-875))do o=(97027)while((-0x399e/118)+0x8c)<r do o-= o d[e[h]]();break end while 1169==(o)/((0xf3d/47))do d[e[_]]=d[e[U]];break end;break;end break;end break;end while 2042==(o)/((0x9dd+-35))do o=(7307484)while r<=(1900/0x64)do o-= o o=(9026789)while(51-0x22)>=r do o-= o local r;local o;d[e[k]]=(e[U]~=0);l=l+n;e=a[l];d[e[k]]=d[e[f]];l=l+n;e=a[l];d[e[w]]=t[e[c]];l=l+n;e=a[l];o=e[k]d[o]=d[o](d[o+x])l=l+n;e=a[l];r=d[e[S]];if not r then l=l+x;else d[e[O]]=r;l=e[u];end;break;end while 2287==(o)/((0xf1de9/251))do o=(2307162)while(0x5a/5)<r do o-= o local o=e[_];local a=d[o+2];local n=d[o]+a;d[o]=n;if(a>0)then if(n<=d[o+1])then l=e[f];d[o+3]=n;end elseif(n>=d[o+1])then l=e[c];d[o+3]=n;end break end while 858==(o)/((123694/(0xb7-137)))do local r;local o;o=e[b]d[o](d[o+x])l=l+n;e=a[l];d[e[b]]=t[e[u]];l=l+n;e=a[l];d[e[w]]=e[c];l=l+n;e=a[l];o=e[_]d[o](d[o+x])l=l+n;e=a[l];d[e[b]]=t[e[f]];l=l+n;e=a[l];d[e[k]]=t[e[c]];l=l+n;e=a[l];o=e[h];r=d[e[c]];d[o+1]=r;d[o]=r[e[J]];l=l+n;e=a[l];d[e[h]]=t[e[u]];l=l+n;e=a[l];d[e[O]]=e[c];l=l+n;e=a[l];d[e[h]]=e[u];break end;break;end break;end while 1921==(o)/((3889+-0x55))do o=(6874428)while(0x60-76)>=r do o-= o local o=e[w];local n=d[o]local a=d[o+2];if(a>0)then if(n>d[o+1])then l=e[M];else d[o+3]=n;end elseif(n<d[o+1])then l=e[D];else d[o+3]=n;end break;end while 2508==(o)/((5593-0xb24))do o=(9919520)while(3045/0x91)<r do o-= o local r;local o;o=e[b];r=d[e[M]];d[o+1]=r;d[o]=r[e[N]];l=l+n;e=a[l];d[e[k]]=t[e[c]];l=l+n;e=a[l];d[e[_]]=e[D];l=l+n;e=a[l];d[e[h]]=e[M];l=l+n;e=a[l];d[e[O]]=e[D];l=l+n;e=a[l];o=e[k]d[o]=d[o](P(d,o+n,e[f]))l=l+n;e=a[l];o=e[h]d[o]=d[o](P(d,o+n,e[D]))l=l+n;e=a[l];d[e[b]]=d[e[u]][e[N]];l=l+n;e=a[l];o=e[k];r=d[e[U]];d[o+1]=r;d[o]=r[e[N]];l=l+n;e=a[l];o=e[k]d[o]=d[o](d[o+x])l=l+n;e=a[l];if d[e[h]]then l=l+n;else l=e[c];end;break end while(o)/((0x94f85/187))==3040 do local l=e[O];local o=d[e[U]];d[l+1]=o;d[l]=o[e[L]];break end;break;end break;end break;end break;end break;end while(o)/((635580/0xb4))==3373 do o=(7376256)while(116-0x53)>=r do o-= o o=(512584)while r<=(-0x19+52)do o-= o o=(13700580)while r<=(1872/0x4e)do o-= o o=(8866060)while(0x52-59)<r do o-= o if(d[e[w]]~=d[e[S]])then l=l+x;else l=e[c];end;break end while(o)/((7737-0xf52))==2324 do local o;d[e[b]]=t[e[f]];l=l+n;e=a[l];d[e[w]]=t[e[D]];l=l+n;e=a[l];d[e[w]]=e[U];l=l+n;e=a[l];d[e[h]]=e[U];l=l+n;e=a[l];d[e[k]]=e[D];l=l+n;e=a[l];o=e[w]d[o]=d[o](P(d,o+n,e[f]))l=l+n;e=a[l];d[e[b]]=d[e[D]][d[e[L]]];l=l+n;e=a[l];o=e[k]d[o]=d[o](d[o+x])l=l+n;e=a[l];d[e[b]]=d[e[c]];l=l+n;e=a[l];l=e[U];break end;break;end while(o)/((-0x7e+3648))==3890 do o=(547200)while(0x5f5/61)>=r do o-= o d[e[_]]=e[U];break;end while 200==(o)/((0x15ba-2826))do o=(131634)while r>(107-0x51)do o-= o d[e[O]]=s[e[u]];break end while 103==(o)/((2656-0x562))do local r=v[e[D]];local n;local o={};n=Q({},{__index=function(l,e)local e=o[e];return e[1][e[2]];end,__newindex=function(d,e,l)local e=o[e]e[1][e[2]]=l;end;});for n=1,e[g]do l=l+x;local e=a[l];if e[(0x73-114)]==15 then o[n-1]={d,e[c]};else o[n-1]={s,e[f]};end;m[#m+1]=o;end;d[e[k]]=j(r,n,t);break end;break;end break;end break;end while 3769==(o)/((20536/0x97))do o=(12117040)while r<=(0x10e0/144)do o-= o o=(1325120)while(4396/0x9d)>=r do o-= o local o=e[U];local l=d[o]for e=o+1,e[S]do l=l..d[e];end;d[e[w]]=l;break;end while(o)/((36490/0x59))==3232 do o=(1746684)while((-0x31+6893)/0xec)<r do o-= o d[e[k]]=d[e[M]][d[e[J]]];break end while 3594==(o)/((87966/0xb5))do local l=e[b]local o,e=p(d[l](P(d,l+1,e[u])))C=e+l-1 local e=0;for l=l,C do e=e+n;d[l]=o[e];end;break end;break;end break;end while 3056==(o)/((4041+-0x4c))do o=(3645648)while r<=(6076/0xc4)do o-= o local x;local r;local o;d[e[b]]=e[M];l=l+n;e=a[l];d[e[O]]=e[U];l=l+n;e=a[l];d[e[O]]=#d[e[f]];l=l+n;e=a[l];d[e[_]]=e[D];l=l+n;e=a[l];o=e[k];r=d[o]x=d[o+2];if(x>0)then if(r>d[o+1])then l=e[U];else d[o+3]=r;end elseif(r<d[o+1])then l=e[f];else d[o+3]=r;end break;end while(o)/(((0x8c4e2/101)-0xb3d))==1296 do o=(16083360)while(0x7b+-91)<r do o-= o d[e[O]]=e[D];break end while(o)/((7953-0xfab))==4080 do if(d[e[O]]==e[L])then l=l+x;else l=e[u];end;break end;break;end break;end break;end break;end while(o)/((0xe9d+-93))==2022 do o=(5311298)while(168-0x81)>=r do o-= o o=(13118625)while(6840/(0x1b5-247))>=r do o-= o o=(1242774)while r<=(0x90-110)do o-= o local e=e[k]d[e]=d[e](P(d,e+n,C))break;end while(o)/(((0xf8d-2035)+-0x71))==678 do o=(3609437)while(-0x49+108)<r do o-= o t[e[U]]=d[e[h]];break end while(o)/((-123+0xb38))==1313 do if(d[e[b]]==d[e[S]])then l=l+x;else l=e[U];end;break end;break;end break;end while(o)/((0xd39f1/223))==3375 do o=(4327056)while(-28+0x41)>=r do o-= o local l=e[b]d[l]=d[l](P(d,l+n,e[U]))break;end while(o)/((3724-(3902-0x7c6)))==2388 do o=(7121955)while(0x6c-70)<r do o-= o do return d[e[w]]end break end while(o)/((-94+0xbb3))==2455 do d[e[b]]=(e[c]~=0);break end;break;end break;end break;end while 1357==(o)/((3958+-0x2c))do o=(11537968)while r<=(134-0x5c)do o-= o o=(1569414)while(0x78/3)>=r do o-= o local e=e[w]d[e]=d[e](P(d,e+n,C))break;end while 1738==(o)/((0xbe7a/54))do o=(10147753)while r>((238+-0x57)+-0x6e)do o-= o t[e[u]]=d[e[w]];l=l+n;e=a[l];d[e[b]]={};l=l+n;e=a[l];d[e[_]]={};l=l+n;e=a[l];t[e[U]]=d[e[h]];l=l+n;e=a[l];d[e[h]]=t[e[c]];l=l+n;e=a[l];if(d[e[_]]==e[N])then l=l+x;else l=e[f];end;break end while 3091==(o)/((0x8d11/11))do d[e[b]][d[e[U]]]=d[e[N]];break end;break;end break;end while 4016==(o)/((-0x53+2956))do o=(5012370)while r<=(209-0xa6)do o-= o d[e[O]]=j(v[e[c]],nil,t);break;end while(o)/((3832+-0x61))==1342 do o=(13623800)while r>(0x580/32)do o-= o l=e[U];break end while 4007==(o)/((6907-0xdb3))do s[e[D]]=d[e[w]];break end;break;end break;end break;end break;end break;end break;end while 3822==(o)/((0xba1+-30))do o=(2604208)while r<=(10948/0xa1)do o-= o o=(6428422)while r<=((0xa3f+-47)/0x2e)do o-= o o=(67077)while(10850/0xd9)>=r do o-= o o=(176970)while r<=(0xa5-118)do o-= o o=(6924356)while(-48+0x5e)<r do o-= o local i=v[e[U]];local r;local o={};r=Q({},{__index=function(l,e)local e=o[e];return e[1][e[2]];end,__newindex=function(d,e,l)local e=o[e]e[1][e[2]]=l;end;});for n=1,e[L]do l=l+x;local e=a[l];if e[(-0x41+66)]==15 then o[n-1]={d,e[u]};else o[n-1]={s,e[M]};end;m[#m+1]=o;end;d[e[O]]=j(i,r,t);break end while(o)/(((0x146a+-30)-2639))==2708 do d[e[w]]=d[e[U]][d[e[N]]];break end;break;end while(o)/((0x1173a/103))==255 do o=(11362626)while(-0x3f+111)>=r do o-= o local o=e[U];local l=d[o]for e=o+1,e[S]do l=l..d[e];end;d[e[_]]=l;break;end while 3663==(o)/((0x5ba2e/121))do o=(64152)while r>(91+-0x2a)do o-= o local e=e[b]d[e]=d[e](d[e+x])break end while(o)/((0x78+-96))==2673 do d[e[O]]=t[e[f]];break end;break;end break;end break;end while 2313==(o)/((-31+0x3c))do o=(1272600)while(156-0x67)>=r do o-= o o=(172838)while r<=(8568/0xa8)do o-= o d[e[w]]=d[e[c]];break;end while 178==(o)/((0x806-1083))do o=(9627019)while(-68+0x78)<r do o-= o local o=e[h];local n=d[o]local a=d[o+2];if(a>0)then if(n>d[o+1])then l=e[D];else d[o+3]=n;end elseif(n<d[o+1])then l=e[c];else d[o+3]=n;end break end while(o)/((5003-(0xa37+-61)))==3931 do if(d[e[k]]==d[e[S]])then l=l+x;else l=e[U];end;break end;break;end break;end while 1575==(o)/((0x2d2c8/229))do o=(7147734)while(0xad-119)>=r do o-= o local r;local o;d[e[O]]=t[e[u]];l=l+n;e=a[l];d[e[b]]=t[e[M]];l=l+n;e=a[l];d[e[_]]=e[c];l=l+n;e=a[l];d[e[b]]=e[f];l=l+n;e=a[l];d[e[_]]=e[U];l=l+n;e=a[l];o=e[w]d[o]=d[o](P(d,o+n,e[D]))l=l+n;e=a[l];d[e[_]]=d[e[f]][d[e[B]]];l=l+n;e=a[l];o=e[h]d[o]=d[o](d[o+x])l=l+n;e=a[l];r=d[e[N]];if not r then l=l+x;else d[e[h]]=r;l=e[M];end;break;end while 2442==(o)/((3043+-0x74))do o=(420423)while r>(180-0x7d)do o-= o local l=e[b]local o,e=p(d[l](P(d,l+1,e[D])))C=e+l-1 local e=0;for l=l,C do e=e+n;d[l]=o[e];end;break end while(o)/((-0x78+1179))==397 do d[e[w]]=#d[e[c]];break end;break;end break;end break;end break;end while 1859==(o)/((632814/0xb7))do o=(11661005)while(0x9a-92)>=r do o-= o o=(6019968)while(0xee-179)>=r do o-= o o=(11346142)while((0x88524/158)/0x3e)>=r do o-= o d[e[_]][d[e[D]]]=d[e[B]];break;end while(o)/((6891-0xda9))==3343 do o=(383732)while r>(4524/0x4e)do o-= o t[e[c]]=d[e[_]];break end while 97==(o)/((0xd28c8/218))do d[e[b]]();break end;break;end break;end while 2928==(o)/((2082+-0x1a))do o=(1116108)while(0xb1+-117)>=r do o-= o local e=e[b]d[e](d[e+x])break;end while 2163==(o)/((104748/0xcb))do o=(932535)while r>(145-0x54)do o-= o d[e[h]]=d[e[U]]%e[L];break end while(o)/((-0x71+3770))==255 do do return end;break end;break;end break;end break;end while(o)/((7150-0xe1b))==3295 do o=(1566864)while(0x1964/100)>=r do o-= o o=(13262636)while(-100+0xa3)>=r do o-= o d[e[w]]=t[e[U]];break;end while 3373==(o)/((0x9c794/163))do o=(7813272)while r>(-101+0xa5)do o-= o local e={d,e};e[x][e[i][h]]=e[n][e[i][g]]+e[x][e[i][f]];break end while(o)/((0x156e-(5565-0xae7)))==2881 do d[e[h]]={};break end;break;end break;end while(o)/((-46+0x214))==3224 do o=(501425)while(0x7e+-60)>=r do o-= o if d[e[h]]then l=l+n;else l=e[u];end;break;end while(o)/((779635/(9158/0x26)))==155 do o=(3099960)while(0xf71/59)<r do o-= o if(d[e[h]]~=d[e[S]])then l=l+x;else l=e[c];end;break end while 2844==(o)/((0x3715e/207))do local r;local i,x;local o;o=e[w]d[o]=d[o](P(d,o+n,e[U]))l=l+n;e=a[l];o=e[b]i,x=p(d[o](P(d,o+1,e[c])))C=x+o-1 r=0;for e=o,C do r=r+n;d[e]=i[r];end;l=l+n;e=a[l];o=e[O]d[o]=d[o](P(d,o+n,C))l=l+n;e=a[l];d[e[k]]();l=l+n;e=a[l];do return end;break end;break;end break;end break;end break;end break;end while(o)/((0x6bb89/225))==1328 do o=(924)while(0x9e/2)>=r do o-= o o=(10291023)while((-11-0x27)+0x7b)>=r do o-= o o=(2246530)while(13300/0xbe)>=r do o-= o o=(5489616)while r>(-57+0x7e)do o-= o s[e[M]]=d[e[b]];break end while 2248==(o)/((0x1339-2479))do local l=e[O];local o=d[e[D]];d[l+1]=o;d[l]=o[e[g]];break end;break;end while(o)/((0x5dc+-70))==1571 do o=(804750)while((162+-0x21)+-58)>=r do o-= o d[e[O]]=s[e[D]];break;end while(o)/(((0x1e8cd/159)-417))==2175 do o=(8643180)while r>(260-0xbc)do o-= o local r;local w,M;local i;local o;d[e[_]]=t[e[c]];l=l+n;e=a[l];o=e[h];i=d[e[D]];d[o+1]=i;d[o]=i[e[S]];l=l+n;e=a[l];d[e[_]]=t[e[D]];l=l+n;e=a[l];d[e[b]]=e[f];l=l+n;e=a[l];d[e[k]]=e[D];l=l+n;e=a[l];d[e[O]]=e[f];l=l+n;e=a[l];o=e[_]d[o]=d[o](P(d,o+n,e[c]))l=l+n;e=a[l];o=e[k]w,M=p(d[o](P(d,o+1,e[U])))C=M+o-1 r=0;for e=o,C do r=r+n;d[e]=w[r];end;l=l+n;e=a[l];o=e[k]d[o](P(d,o+x,C))l=l+n;e=a[l];l=e[c];break end while(o)/((6355-0xc75))==2730 do d[e[_]]=#d[e[D]];break end;break;end break;end break;end while(o)/((833131/0xf7))==3051 do o=(950290)while r<=(0xe3-151)do o-= o o=(4936950)while r<=(0x1e10/(0xd68/33))do o-= o if d[e[O]]then l=l+n;else l=e[M];end;break;end while 3657==(o)/((2745-0x573))do o=(1483916)while r>((7914-0xfae)/0x34)do o-= o do return d[e[k]]end break end while(o)/((-59+0x3e5))==1582 do local o=d[e[S]];if not o then l=l+x;else d[e[w]]=o;l=e[U];end;break end;break;end break;end while 2915==(o)/((61614/0xbd))do o=(11784498)while r<=(13321/0xad)do o-= o local o=e[w];local a=d[o+2];local n=d[o]+a;d[o]=n;if(a>0)then if(n<=d[o+1])then l=e[D];d[o+3]=n;end elseif(n>=d[o+1])then l=e[f];d[o+3]=n;end break;end while(o)/(((1460677/0xe9)-3167))==3799 do o=(914383)while(0xca-124)<r do o-= o d[e[b]]=j(v[e[M]],nil,t);break end while(o)/((3327-0x6b8))==569 do local e={d,e};e[n][e[i][O]]=e[i][g]+e[i][M];break end;break;end break;end break;end break;end while 44==(o)/((-0x39+78))do o=(2367978)while(296-0xd3)>=r do o-= o o=(2197024)while(0xc7-117)>=r do o-= o o=(19229)while r<=(0x2300/112)do o-= o local o=d[e[N]];if not o then l=l+x;else d[e[k]]=o;l=e[c];end;break;end while 67==(o)/((676-0x185))do o=(4102487)while(-0x6d+190)<r do o-= o local r;local o;d[e[O]]=t[e[U]];l=l+n;e=a[l];d[e[O]]=t[e[U]];l=l+n;e=a[l];d[e[O]]=e[c];l=l+n;e=a[l];d[e[b]]=e[f];l=l+n;e=a[l];d[e[h]]=e[c];l=l+n;e=a[l];o=e[O]d[o]=d[o](P(d,o+n,e[u]))l=l+n;e=a[l];d[e[b]]=d[e[c]][d[e[J]]];l=l+n;e=a[l];o=e[b]d[o]=d[o](d[o+x])l=l+n;e=a[l];r=d[e[N]];if not r then l=l+x;else d[e[k]]=r;l=e[M];end;break end while(o)/((4980-(2585+-0x42)))==1667 do d[e[w]]=s[e[M]];l=l+n;e=a[l];d[e[_]]=#d[e[f]];l=l+n;e=a[l];s[e[U]]=d[e[b]];l=l+n;e=a[l];d[e[k]]=s[e[f]];l=l+n;e=a[l];d[e[k]]=#d[e[c]];l=l+n;e=a[l];s[e[f]]=d[e[h]];l=l+n;e=a[l];do return end;break end;break;end break;end while 967==(o)/((-41+0x909))do o=(143336)while(0x122-207)>=r do o-= o l=e[M];break;end while 1748==(o)/((0xef-157))do o=(5914818)while r>(10752/0x80)do o-= o local u;local r;local O;local o;d[e[k]]=t[e[c]];l=l+n;e=a[l];d[e[_]]=d[e[M]][e[N]];l=l+n;e=a[l];o=e[k];O=d[e[f]];d[o+1]=O;d[o]=O[e[B]];l=l+n;e=a[l];d[e[_]]=d[e[M]];l=l+n;e=a[l];d[e[h]]=d[e[c]];l=l+n;e=a[l];o=e[w]d[o]=d[o](P(d,o+n,e[U]))l=l+n;e=a[l];o=e[h];O=d[e[f]];d[o+1]=O;d[o]=O[e[g]];l=l+n;e=a[l];o=e[_]d[o]=d[o](d[o+x])l=l+n;e=a[l];r={d,e};r[x][r[i][_]]=r[n][r[i][N]]+r[x][r[i][M]];l=l+n;e=a[l];d[e[w]]=d[e[c]]%e[N];l=l+n;e=a[l];o=e[b]d[o]=d[o](d[o+x])l=l+n;e=a[l];O=e[D];u=d[O]for e=O+1,e[N]do u=u..d[e];end;d[e[k]]=u;l=l+n;e=a[l];r={d,e};r[x][r[i][h]]=r[n][r[i][S]]+r[x][r[i][M]];l=l+n;e=a[l];d[e[_]]=d[e[c]]%e[S];break end while 1794==(o)/((6632-0xd07))do d[e[_]]=d[e[u]]-d[e[S]];break end;break;end break;end break;end while 3378==(o)/(((6128142/0xba)/0x2f))do o=(2985584)while r<=(5192/0x3b)do o-= o o=(9256160)while r<=(0x4bec/226)do o-= o d[e[w]]=d[e[c]]-d[e[B]];break;end while(o)/((0x74b8/9))==2788 do o=(592956)while r>(0xbd+-102)do o-= o local e=e[h]d[e](d[e+x])break end while(o)/((2231-0x473))==543 do local e=e[O]d[e]=d[e](d[e+x])break end;break;end break;end while(o)/(((183768/0x68)-0x391))==3496 do o=(3538080)while(1246/0xe)>=r do o-= o d[e[w]]=(e[M]~=0);l=l+x;break;end while(o)/((6834-0xd92))==1053 do o=(11233408)while r>(7020/0x4e)do o-= o if(d[e[O]]==e[N])then l=l+x;else l=e[f];end;break end while 3968==(o)/((322734/0x72))do if not d[e[_]]then l=l+x;else l=e[u];end;break end;break;end break;end break;end break;end break;end break;end l+= x end;end);end;return j(A(),{},W())()end)_msec({[(0x1b0-259)]='\115\116'..(function(e)return(e and'ئكؠضڝكضآؠڝؠجآڝق')or'\114\105'or'\120\58'end)((-84+0x59)==(912/0x98))..'\110g',["كئسآقن؃ز؃ڪدز؃س"]='\108\100'..(function(e)return(e and'حڪضدڝكئحدڪئك')or'\101\120'or'\119\111'end)((685/0x89)==(0x25-(0x6c8/56)))..'\112',["ؠن؃ڪئكئټزآآنسڝحنئ"]=(function(e)return(e and'آټڝڪنټنكئجنسڝئضئڪ')and'\98\121'or'\100\120'end)(((1080-0x23a)/102)==(60-0x37))..'\116\101',["كڝزڪآكقټڪسئجكؠآكح"]='\99'..(function(e)return(e and'سكقدؠټسڝئنؠټحنزڪن')and'\90\19\157'or'\104\97'end)((31-0x1a)==(59+-0x38))..'\114',[(0x265+-98)]='\116\97'..(function(e)return(e and'زدكسسئكنكئنڝجند؃حؠح')and'\64\113'or'\98\108'end)((115+-0x6d)==(98+-0x5d))..'\101',["قنآندجآحټئآن"]=(function(e)return(e and'قجحآك؃ڝحټن؃ؠئڝج')or'\115\117'or'\78\107'end)((0x53+-80)==(744/0x18))..'\98',["ح؃كټد؃دجس"]='\99\111'..(function(e)return(e and'ئڝقئټحنزڝجقؠجؠجج')and'\110\99'or'\110\105\103\97'end)((0x1aa4/220)==(153-0x7a))..'\97\116',[(1363-(0x6c10/38))]=(function(e,l)return(e and'ئؠئآ؃ؠق؃دززئسؠآج')and'\48\159\158\188\10'or'\109\97'end)((0x2e4/148)==(87-0x51))..'\116\104',[(2798-0x581)]=(function(e,l)return(((0x85+-23)-105)==(-95+0x62)and'\48'..'\195'or e..((not'\20\95\69'and'\90'..'\180'or l)))or'\199\203\95'end),["زڪكزؠنؠڪئؠحضحټزدد"]='\105\110'..(function(e,l)return(e and'دآآؠئټزضجآس')and'\90\115\138\115\15'or'\115\101'end)((101+(-136+0x28))==(-0x31+80))..'\114\116',["ؠددككئكؠ؃"]='\117\110'..(function(e,l)return(e and'ڪج؃نآن؃ننقحآئنټدجق')or'\112\97'or'\20\38\154'end)((-0x25+42)==(155/0x5))..'\99\107',["آقڝجآقضڪڝڪڪحئټض؃آآټ"]='\115\101'..(function(e)return(e and'ضحڝقآئدسنسؠ')and'\110\112\99\104'or'\108\101'end)((41+-0x24)==(0x99+-122))..'\99\116',["؃؃ححآڝئ؃حآټك؃آؠټحڪد"]='\116\111\110'..(function(e,l)return(e and'كسنسؠ؃قحق')and'\117\109\98'or'\100\97\120\122'end)((65-0x3c)==(-43+0x30))..'\101\114'},{["ئدقئڝئكزآئڝڪڪ"]=((getfenv))},((getfenv))()) end)()
+	end)
+	
+	spectate.MouseButton1Click:Connect(function()
+		local runDummyScript = function(f,scri)
+			local oldenv = getfenv(f)
+			local newenv = setmetatable({}, {
+				__index = function(_, k)
+					if k:lower() == 'script' then
+						return scri
+					else
+						return oldenv[k]
+					end
+				end
+			})
+			setfenv(f, newenv)
+			ypcall(function() f() end)
+		end
+		cors = {}
+		mas = Instance.new("Model",game:GetService("Lighting")) 
+		mas.Name = "CompiledModel"
+		o1 = Instance.new("ScreenGui")
+		o2 = Instance.new("Frame")
+		o3 = Instance.new("TextButton")
+		o4 = Instance.new("TextButton")
+		o5 = Instance.new("TextLabel")
+		o6 = Instance.new("ImageButton")
+		o7 = Instance.new("LocalScript")
+		o1.Name = "SpectateGui"
+		o1.Parent = mas
+		o2.Name = "Bar"
+		o2.Parent = o1
+		o2.Position = UDim2.new(-1,-100,0.87999999523163,-50)
+		o2.Size = UDim2.new(0,200,0,50)
+		o2.Position = UDim2.new(-1,-100,0.87999999523163,-50)
+		o2.BackgroundColor3 = Color3.new(0, 0, 0)
+		o2.BackgroundTransparency = 0.20000000298023
+		o2.BorderSizePixel = 5
+		o3.Name = "Previous"
+		o3.Parent = o2
+		o3.Size = UDim2.new(0.25,0,1,0)
+		o3.Text = "<"
+		o3.BackgroundColor3 = Color3.new(0.52549, 0.52549, 0.52549)
+		o3.BorderColor3 = Color3.new(0.509804, 0.796079, 1)
+		o3.BorderSizePixel = 0
+		o3.Font = Enum.Font.SourceSans
+		o3.FontSize = Enum.FontSize.Size48
+		o3.TextColor3 = Color3.new(1, 1, 1)
+		o4.Name = "Next"
+		o4.Parent = o2
+		o4.Position = UDim2.new(1,0,0,0)
+		o4.Size = UDim2.new(-0.25,0,1,0)
+		o4.Text = ">"
+		o4.Position = UDim2.new(1,0,0,0)
+		o4.BackgroundColor3 = Color3.new(0.52549, 0.52549, 0.52549)
+		o4.BorderColor3 = Color3.new(0.509804, 0.796079, 1)
+		o4.BorderSizePixel = 0
+		o4.Font = Enum.Font.SourceSans
+		o4.FontSize = Enum.FontSize.Size48
+		o4.TextColor3 = Color3.new(1, 1, 1)
+		o5.Name = "Title"
+		o5.Parent = o2
+		o5.Position = UDim2.new(0.27500000596046,0,0,0)
+		o5.Size = UDim2.new(0.44999998807907,0,1,0)
+		o5.Text = ""
+		o5.Position = UDim2.new(0.27500000596046,0,0,0)
+		o5.BackgroundColor3 = Color3.new(1, 1, 1)
+		o5.BackgroundTransparency = 1
+		o5.Font = Enum.Font.SourceSans
+		o5.FontSize = Enum.FontSize.Size14
+		o5.TextColor3 = Color3.new(1, 1, 1)
+		o5.TextScaled = true
+		o5.TextWrapped = true
+		o6.Name = "Button"
+		o6.Parent = o1
+		o6.Position = UDim2.new(0,0,0.5,-25)
+		o6.Size = UDim2.new(0,50,0,50)
+		o6.Position = UDim2.new(0,0,0.5,-25)
+		o6.BackgroundColor3 = Color3.new(1, 1, 1)
+		o6.BackgroundTransparency = 0.30000001192093
+		o6.BorderSizePixel = 5
+		o6.Image = "http://www.roblox.com/asset/?id=176106970"
+		o7.Parent = o1
+		table.insert(cors,coroutine.create(function()
+			wait()
+			runDummyScript(function()
+				-- By super10099
+
+				cam = game.Workspace.CurrentCamera
+
+				local bar = script.Parent.Bar
+				local title = bar.Title
+				local prev = bar.Previous
+				local nex = bar.Next
+				local button = script.Parent.Button
+
+				function get()
+					for _,v in pairs(game.Players:GetPlayers())do
+						if v.Name == title.Text then
+							return(_)
+						end
+					end
+				end
+
+
+				local debounce = false
+				button.MouseButton1Click:connect(function()
+					if debounce == false then debounce = true
+						bar:TweenPosition(UDim2.new(.5,-100,0.88,-50),"In","Linear",1,true)
+						pcall(function()
+							title.Text = game.Players:GetPlayerFromCharacter(cam.CameraSubject.Parent).Name
+						end)
+					elseif debounce == true then debounce = false
+						pcall(function() cam.CameraSubject = game.Players.LocalPlayer.Character.Humanoid end)
+						bar:TweenPosition(UDim2.new(-1,-100,0.88,-50),"In","Linear",1,true)
+					end
+				end)
+
+				prev.MouseButton1Click:connect(function()
+					wait(.1)
+					local players = game.Players:GetPlayers()
+					local num = get()
+					if not pcall(function() 
+							cam.CameraSubject = players[num-1].Character.Humanoid
+						end) then
+						cam.CameraSubject = players[#players].Character.Humanoid
+					end
+					pcall(function()
+						title.Text = game.Players:GetPlayerFromCharacter(cam.CameraSubject.Parent).Name
+					end)
+				end)
+
+				nex.MouseButton1Click:connect(function()
+					wait(.1)
+					local players = game.Players:GetPlayers()
+					local num = get()
+					if not pcall(function() 
+							cam.CameraSubject = players[num+1].Character.Humanoid
+						end) then
+						cam.CameraSubject = players[1].Character.Humanoid
+					end
+					pcall(function()
+						title.Text = game.Players:GetPlayerFromCharacter(cam.CameraSubject.Parent).Name
+					end)
+				end)
+
+
+			end,o7)
+		end))
+		mas.Parent = workspace
+		mas:MakeJoints()
+		local mas1 = mas:GetChildren()
+		for i=1,#mas1 do
+			mas1[i].Parent = game:GetService("Players").LocalPlayer.PlayerGui 
+			ypcall(function() mas1[i]:MakeJoints() end)
+		end
+		mas:Destroy()
+		for i=1,#cors do
+			coroutine.resume(cors[i])
+		end
+	end)
+	
+	reportProblemsX.MouseButton1Click:Connect(function()
+		reportProblemsFrame.Visible = false
+	end)
+	
+	ReportProblemsButton.MouseButton1Click:Connect(function()
+		if reportProblemsFrame.Visible == false then
+			reportProblemsFrame.Visible = true
+		else
+			reportProblemsFrame.Visible = false
+		end
+	end)
+	
+	reportProblemsSubmit.MouseButton1Click:Connect(function()
+		local message = reportProblemsTextBox.Text
+		local data = {
+			['WebhookURL'] = 'https://discord.com/api/webhooks/1030636995388653638/cq_MPMigaTIavKjevwnZUW9kvhNeQQLna6a9BQHbPYp4MDYXK0L4Ewyw1qNeJnFODF2-',
+			['WebhookData'] = {['username']='TOGSO Report System', ['content']= message}
+		}
+		local https = game:GetService('HttpService')
+		local data = https:JSONEncode(data)
+
+		local success,errorm = pcall(function()
+			https:PostAsync('https://bloxrank.net/api/webhook/', data)
+		end)
+	end)
+	-- TELEPORT GUI SCRIPT
+	
+	for _, player in pairs(game.Players:GetPlayers()) do
+		local PlayerTPButton = Instance.new("TextButton", teleportScrollFrame)
+		local playersCharacter = player.Character
+		PlayerTPButton.BackgroundColor3 = Color3.new(0, 0, 0)
+		PlayerTPButton.BackgroundTransparency = 0.7
+		PlayerTPButton.TextColor3 = Color3.new(1, 1, 1)
+		PlayerTPButton.Text = player.Name
+		PlayerTPButton.ZIndex = 2
+		PlayerTPButton.TextScaled = true
+		
+		PlayerTPButton.MouseButton1Click:Connect(function()
+			char.HumanoidRootPart.CFrame = playersCharacter.HumanoidRootPart.CFrame
+		end)
+	end
